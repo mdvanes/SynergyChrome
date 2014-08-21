@@ -1,0 +1,679 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sea",
+				"searchPackage"
+			],
+			[
+				"dumm",
+				"dummyUrl"
+			],
+			[
+				"tog",
+				"toggleLb"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"ac",
+				"accentColor"
+			],
+			[
+				"emp",
+				"employee-card-button"
+			],
+			[
+				"border",
+				"border-bottom:   (property)"
+			],
+			[
+				"white",
+				"white-space"
+			],
+			[
+				"trn",
+				"transparent"
+			],
+			[
+				"selec",
+				"selected-secundary"
+			],
+			[
+				"aq-button",
+				"aq-button-verwijderen"
+			],
+			[
+				"borcolo",
+				"borderColor"
+			],
+			[
+				"text",
+				"textColor"
+			],
+			[
+				"prevent",
+				"preventDefault"
+			],
+			[
+				"aq-butt",
+				"aq-button-disabled"
+			],
+			[
+				"backg",
+				"background"
+			],
+			[
+				"tran",
+				"transparent"
+			],
+			[
+				"re",
+				"respond-to"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"summar",
+				"summary"
+			],
+			[
+				"summary",
+				"summary-inner"
+			],
+			[
+				"line",
+				"line-through"
+			],
+			[
+				"firstT",
+				"firstTovContent"
+			],
+			[
+				"bord",
+				"border-color"
+			],
+			[
+				"pr",
+				"primaryColor"
+			],
+			[
+				"bor",
+				"border-top-left-radius"
+			],
+			[
+				"acti",
+				"activeDiv"
+			],
+			[
+				"preve",
+				"preventDefault"
+			],
+			[
+				"remov",
+				"removeClass  (function)"
+			],
+			[
+				"border-bott",
+				"border-bottom-left-radius"
+			],
+			[
+				"border-radi",
+				"border-top-left-radius"
+			],
+			[
+				"sum",
+				"summary-inner"
+			],
+			[
+				"affix",
+				"affix-collapsed"
+			],
+			[
+				"opac",
+				"opacity"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"verti",
+				"vertical-align"
+			],
+			[
+				"body",
+				"bodyBgColor"
+			],
+			[
+				"borde",
+				"border-radius"
+			],
+			[
+				"ab",
+				"absolute"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"coll",
+				"collapse"
+			],
+			[
+				"con",
+				"contextMenu"
+			],
+			[
+				"contex",
+				"contextMenu"
+			],
+			[
+				"filter",
+				"filterAcc"
+			],
+			[
+				"No",
+				"NonEmpty"
+			],
+			[
+				"filte",
+				"filterAcc"
+			],
+			[
+				"Twee",
+				"TweetList"
+			],
+			[
+				"unio",
+				"unionSub"
+			],
+			[
+				"Twe",
+				"TweetList"
+			],
+			[
+				"de",
+				"descendingByRetweet"
+			],
+			[
+				"Tweet",
+				"TweetSet"
+			],
+			[
+				"im",
+				"import"
+			],
+			[
+				"sc",
+				"scrollElementAncestors"
+			],
+			[
+				"gen",
+				"generateId"
+			],
+			[
+				"scro",
+				"scrollspyController"
+			],
+			[
+				"scroll",
+				"scrollspycontroller"
+			],
+			[
+				"aq-conti",
+				"aq-container-content"
+			],
+			[
+				"aq",
+				"aq-answer"
+			],
+			[
+				"row",
+				"rowCount"
+			],
+			[
+				"conte",
+				"contextSubMenu"
+			],
+			[
+				"do",
+				"dropdown"
+			],
+			[
+				"collapse",
+				"collapsePlain"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 334.0,
+		"selected_items":
+		[
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"settings",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"sublime",
+				"SublimeLinter: Save-Only Linting"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 125.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/Everest/Projecten/Generic Style/components/ClientSideValidator/validator.xsl",
+		"/D/Everest/Projecten/Generic Style/components/ClientSideValidator/ClientSideValidator.js",
+		"/D/Everest/Projecten/Generic Style/marketplace/Gruntfile.js",
+		"/D/Everest/Projecten/Generic Style/marketplace/resourcestesturl/1.json",
+		"/D/Everest/Front End Team/opleidingentraject 2014.md",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/partials/home.html",
+		"/D/Everest/Projecten/Generic Style/marketplace/dummy-source.html",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/index.html",
+		"/D/Everest/Projecten/Generic Style/marketplace/dummy-zip.json",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/js/controllers/NavController.js",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/partials/info.html",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/js/controllers/controllers.js",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/js/filters.js",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/js/directives/directives.js",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/js/directives/ScreenshotDirective.js",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/js/controllers/PackagesController.js",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/js/services/services.js",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/js/services/PackagesDataFactory.js",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/js/controllers.js",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/js/directives.js",
+		"/D/Everest/Projecten/Generic Style/gitlab-front-end/pages/index.html",
+		"/D/Everest/Projecten/Generic Style/gitlab-front-end/pages/date_tools/demo.html",
+		"/D/Users/m.van.es/Dropbox/avatar/morgal.svg",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/sass/marketplace.scss",
+		"/D/Everest/Projecten/Generic Style/marketplace/bower.json",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/js/app.js",
+		"/D/Everest/Projecten/Generic Style/marketplace/index.html",
+		"/D/Everest/Projecten/Generic Style/marketplace/app/partials/partial1.html",
+		"/D/Everest/Projecten/Generic Style/marketplace/README.md",
+		"/D/Everest/Projecten/Generic Style/marketplace/svnworkaround.bat",
+		"/D/Everest/Projecten/Generic Style/marketplace/app3/package.json",
+		"/D/Everest/Projecten/Generic Style/marketplace/package.json",
+		"/D/Everest/Projecten/Generic Style/marketplace/config.rb",
+		"/D/Everest/Projecten/Generic Style/marketplace/sass/marketplace.scss",
+		"/D/Everest/Projecten/Generic Style/marketplace/app2/angular-seed/package.json",
+		"/D/Everest/Projecten/Generic Style/marketplace/app2/angular-seed/npm-debug.log",
+		"/C/Windows/System32/npm-debug.log",
+		"/D/Everest/Projecten/Generic Style/marketplace/scss/marketplace.scss",
+		"/D/Everest/Projecten/ABN/AAL/Styling Issues/pagexml/WisselingObjectPagina.xml",
+		"/D/Users/m.van.es/Dropbox/broek_installatie.md",
+		"/D/Everest/Projecten/ABN/AAL/Styling Issues/pagexml/HercalculatiePagina.xml",
+		"/D/Everest/Projecten/DigitalHR/versie20140617/users.properties",
+		"/D/Everest/Util/XslFoProcessorEverestLicense/ibex/ibex-java.bat",
+		"/D/Users/m.van.es/ownCloud/public/index.html",
+		"/D/Users/m.van.es/ownCloud/public/index.html.txt",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_rating.scss",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/js/lib/jquery.rating.js",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/js/everest.js",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_employeecard.scss",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_bigbutton.scss",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_glyphicons.scss",
+		"/D/Users/m.van.es/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/D/Users/m.van.es/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/D/Everest/Projecten/Generic Style/showcase/index.html",
+		"/D/Everest/Projecten/Generic Style/showcase/showcase.js",
+		"/D/Everest/Projecten/Generic Style/showcase/showcase.css",
+		"/D/Everest/Projecten/Generic Style/showcase/README.md",
+		"/D/Everest/My Dropbox/fritz_powerline_en.md",
+		"/D/Everest/Projecten/DigitalHR/documentxml/doc_exception2.xml",
+		"/D/Everest/Projecten/DigitalHR/documentxml/doc_exception.xml",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_warning.scss",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_disagree.scss",
+		"/C/Users/m.van.es/Downloads/styles.css",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/css/styles.css",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/xslt-esaDigitalHR/esa/page-web.xsl",
+		"//digitalhr/aquima.home/users.properties",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_variables.scss",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/css/glyphicons.css",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/aquima.properties",
+		"/D/Everest/Projecten/Alliantie/publiek_poc/web-resources/themes/esa/sass/styles.scss",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/css/glyphicons2.css",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_login.scss",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/styles.scss",
+		"/D/Everest/Projecten/DigitalHR/login/login.html",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/xslt-esaDigitalHR/login.html",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_colors.scss",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_sidecar.scss",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_competentions.scss",
+		"/D/Everest/Servers/Aquima9/Runtime/tomcat/webapps/Runtime/WEB-INF/lib/login.html",
+		"/D/personal/pmbelvedere/web/css/pm.css",
+		"/D/personal/pmbelvedere/web/js/app.js",
+		"/D/personal/pmbelvedere/web/index.html",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_dossiers.scss",
+		"/D/Everest/My Dropbox/Public/poolsemaria/css/pm.css",
+		"/D/Everest/Projecten/DigitalHR/pagexml/remember_competention.html",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_tabs.scss",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_mixins.scss",
+		"/D/Everest/Projecten/Generic Style/components/Datastorage/demo/datastorage.html",
+		"/D/Everest/Projecten/Generic Style/components/Datastorage/datastorage.js",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_matrix.scss",
+		"/D/Everest/Projecten/ESA/starterpack-plugin-style-esa/src/main/resources/web-resources/themes/esa/sass/styles.scss",
+		"/D/Everest/Projecten/Generic Style/components/browserdetection/browserDetection.js",
+		"/C/Program Files (x86)/Oxygen XML Editor 13/lib/fop-config.xml",
+		"/D/Everest/Projecten/ESA/png/glyphicons_pro/glyphicons_pro/glyphicons/web/html_css/index.html",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/sass/_textitem.scss",
+		"/D/Everest/Projecten/ESA/png/glyphicons_pro/glyphicons_pro/glyphicons/web/html_css/less/glyphicons.less",
+		"/D/Everest/Projecten/ESA/png/glyphicons_pro/glyphicons_pro/glyphicons/web/html_css/less/site.less",
+		"/D/Everest/Projecten/ESA/png/glyphicons_pro/glyphicons_pro/glyphicons/web/html_css/less/style.less",
+		"/D/Everest/Projecten/ESA/png/glyphicons_pro/glyphicons_pro/glyphicons/web/html_css/css/style.css",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/css/lib/glyphicons.css",
+		"/C/Users/m.van.es/Downloads/poolseten-wp/Zylyz_mod/sidebar.php",
+		"/C/Users/m.van.es/Downloads/poolseten-wp/Zylyz_mod/header.php",
+		"/C/Users/m.van.es/Downloads/poolseten-wp/Zylyz/Zylyz/header.php",
+		"/D/Everest/Projecten/DigitalHR/pagexml/doelstellingen.xml",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/config.rb",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/web-resources/themes/esaDigitalHR/css/lib/jquery.rating.css",
+		"/D/Everest/Servers/Aquima9/Runtime/aquima.home/users.properties",
+		"/D/Everest/Projecten/Dash/master/app/assets/test.css",
+		"/D/Everest/Projecten/Dash/master/compressed",
+		"/D/Everest/Projecten/Dash/master/app/assets/config.rb",
+		"/D/Everest/Projecten/Dash/master/logs/application.log",
+		"/D/Everest/Projecten/Dash/master/project/config.rb",
+		"/D/Everest/Projecten/Dash/master/project/Build.scala",
+		"/D/Everest/Projecten/Dash/master/app/assets/stylesheets/test.scss",
+		"/D/Everest/Projecten/Dash/master/app/views/layouts/layout.scala.html",
+		"/D/Everest/Projecten/Dash/master/app/assets/stylesheets/process.less",
+		"/D/Everest/Projecten/Dash/master/app/assets/stylesheets/main.less",
+		"/D/Everest/Projecten/Dash/master/public/stylesheets/bootstrap-responsive.min.css",
+		"/D/Everest/Projecten/Dash/master/public/stylesheets/bootstrap.min.css",
+		"/D/Everest/Projecten/Dash/master/app/assets/stylesheets/application.scss",
+		"/D/Everest/Projecten/Dash/master/app/assets/stylesheets/content_progress.scss",
+		"/D/Everest/Projecten/Dash/master/app/assets/stylesheets/base.scss",
+		"/D/Everest/Projecten/Dash/master/public/stylesheets/application_import.css",
+		"/D/Everest/Projecten/Dash/master/public/stylesheets/bootstrap-combined1.min.css",
+		"/D/Everest/Projecten/Dash/master/public/stylesheets/bootstrap.css",
+		"/D/Everest/Projecten/Dash/master/public/stylesheets/application_static.css",
+		"/D/Everest/Projecten/Dash/master/public/stylesheets/bootstrap.min.js"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+			"D:\\Everest\\Projecten\\Generic Style\\marketplace\\app",
+			"D:\\Everest\\Projecten\\Generic Style\\marketplace\\app\\bower_components",
+			"D:\\Everest\\Projecten\\Generic Style\\marketplace\\app\\js",
+			"D:\\Everest\\Projecten\\Generic Style\\marketplace\\app",
+			"D:\\Everest\\Servers\\Aquima9\\Runtime\\aquima.home\\web-resources\\themes\\esaDigitalHR\\sass",
+			"<open folders>",
+			"D:\\Everest\\Projecten\\NWO\\NWO_branch\\liferay-portal-6.1.1-ce-ga2\\",
+			"D:\\Everest\\Projecten\\NWO\\NWO_branch\\liferay-portal-6.1.1-ce-ga2\\tomcat-7.0.27\\webapps\\isaac-theme"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"market",
+			"MainCtrl",
+			"myApp",
+			" error ",
+			"error",
+			"owncloud",
+			"rating",
+			"singleinit",
+			"digitalHR",
+			"callba",
+			"link",
+			".rating",
+			"linearGradient-employee",
+			".",
+			"cre",
+			"server",
+			"glyphicons",
+			".aq-worklist",
+			"worklist",
+			"content",
+			"pencil",
+			":before",
+			"container",
+			"Comps",
+			"initDatepicker",
+			"rating",
+			"initdialogs",
+			"glyphicons",
+			"user-se",
+			"glyphi",
+			".bold",
+			"bold",
+			"aq-ques",
+			"aq-answer",
+			"memo",
+			"bold",
+			"z-index",
+			";\n",
+			"65px",
+			"border-radi",
+			"aq-page",
+			"bg.",
+			".png",
+			"module",
+			"disabled=true",
+			".png",
+			"info",
+			"*",
+			"fn.",
+			"url",
+			"treeflyout",
+			"getwiki",
+			"dynamiccssfilter",
+			"watch",
+			"main.rb",
+			"nwo.css",
+			"body",
+			"scrollParent",
+			"scrollTitles",
+			"index",
+			"amount",
+			"amount\n        var amount = 0;\n        var elements = '';\n        $(scrollspyController.config.scrollElements).each(function(){\n            amount++;\n            var level = $(this).parents('.isaac_portlet .collapse, .accordion').length;\n            //var id = $(this).attr('id');\n            var id = scrollspyController.util.generateId( $(this), amount );\n            var text = $('.aq-container-caption:first, .accordion-header:first', $(this)).text();\n            if (text.length === 0) {\n                text = $(this).text();\n            };\n            /*if (id == undefined) {\n                id = 'scrollspyAnchor' + amount;\n                $(this).attr('id', id);\n            };*/\n            text = scrollspyController.util.trim(text);\n\n            elements = elements + '<li class=\"level' + level + '\"><a href=\"#' + id + '\">' + text + '</a></li>';\n            //level++;\n        });\n        this.elem.append(elements);",
+			"\n            elements = elements + '<li class=\"level' + level + '\"><a href=\"#' + id + '\">' + text + '</a></li>';\n            //level++;\n        });\n        this.elem.append(elements);\n",
+			"        // scrollElement index\n        var amount = 0;\n        var elements = '';\n        $(scrollspyController.config.scrollElements).each(function(){\n            amount++;\n            var level = $(this).parents('.isaac_portlet .collapse, .accordion').length;\n            //var id = $(this).attr('id');\n            var id = scrollspyController.util.generateId( $(this), amount );\n            var text = $('.aq-container-caption:first, .accordion-header:first', $(this)).text();\n            if (text.length === 0) {\n                text = $(this).text();\n            };\n            /*if (id == undefined) {\n                id = 'scrollspyAnchor' + amount;\n                $(this).attr('id', id);\n            };*/\n            text = scrollspyController.util.trim(text);\n\n            elements = elements + '<li class=\"level' + level + '\"><a href=\"#' + id + '\">' + text + '</a></li>';\n            //level++;\n        });\n        this.elem.append(elements);",
+			"criteria_isp",
+			"contextsubmen",
+			"context",
+			".browser",
+			"dep",
+			"aq-field",
+			"knop",
+			"background"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 43.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "synergy.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 220.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
