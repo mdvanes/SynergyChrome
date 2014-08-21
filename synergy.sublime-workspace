@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"bind",
+				"bindSearch"
+			],
+			[
+				"key",
+				"keyCode"
+			],
+			[
 				"sea",
 				"searchPackage"
 			],
@@ -271,6 +279,72 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "readme.md",
+			"settings":
+			{
+				"buffer_size": 769,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/synergyChromeBookmarklet.js",
+			"settings":
+			{
+				"buffer_size": 4727,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 543,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 1928,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "synergyChromeBookmarklet.min.js",
+			"settings":
+			{
+				"buffer_size": 2139,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\"bower\": \"^1.3.1\",\n    \"grunt\": \"^0.4.5\",\n    \"grunt-contrib-compass\": \"^0.9.1\",\n    \"grunt-contrib-copy\": \"^0.5.0\",\n    \"grunt-contrib-watch\": \"^0.6.1\",\n    \"grunt-http-server\": \"0.0.5\",\n    \"load-grunt-tasks\": \"^0.6.0\",\n    \"time-grunt\": \"^0.4.0\"",
+			"settings":
+			{
+				"buffer_size": 248,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "test\n\n<form id=\"Baco\" action=\"CSPSAHours.asp?Action=0\" method=\"POST\">\n\n<input type=\"text\" id=\"ProjectNumberFin\" name=\"ProjectNumberFin\" maxlength=\"20\" style=\"width: 100%; text-transform: uppercase\" language=\"VBS\" onkeydown=\"SelectProjectNumberFin_keydown\" class=\"SaveHistory\" title=\"F2 - Zoeken\">\n\n<script language=\"VBS\">\n							Sub SelectProjectNumberFin_keydown\n								If window.event.keycode = 113 Then\n									SelectProjectNumberFin_clicked\n									window.event.returnValue = False\n								End If\n							End Sub\n							Sub SelectProjectNumberFin_clicked\n								Dim id: id = window.showModalDialog(\"BacoBrowser.asp?Name=CSPSAResourceProjects&ResultCols=p%2EProjectNr%2Cp%2EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (m.FromDate <= {d '2014-08-18'} AND ISNULL(m.UntilDate, '22991231') >= {d '2014-08-18'})) AND ((p.InitialStartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (p.InitialStartDate <= {d '2014-08-18'} AND ISNULL(p.InitialEndDate, '22991231') >= {d '2014-08-18'})) AND p.Status = 'A' AND  (p.ProjectNr IN (SELECT r.ProjectNr FROM CSPSAProjectRates r  LEFT OUTER JOIN Items i ON i.ItemCode = r.Component  WHERE r.ProjectNr IS NOT NULL AND (i.Type = 'S') AND (r.EmpID IS NULL OR r.empID=164) AND ((r.StartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (r.StartDate <= {d '2014-08-18'} AND ISNULL(r.EndDate, '22991231') >= {d '2014-08-18'}))) OR  p.IDCustomer IN (   SELECT r.Account FROM CSPSAProjectRates r  WHERE r.Account = p.IDCustomer AND ((r.StartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (r.StartDate <= {d '2014-08-18'} AND ISNULL(r.EndDate, '22991231') >= {d '2014-08-18'}))  AND r.Account IS NOT NULL))\", window, \"dialogWidth:550px;resizable:yes\")\n								If IsNull(id) Then\n									Baco.ProjectNumberFin.Value = Empty\n									Baco.NewFinPrDesc.Value = Empty\n								ElseIf Not IsEmpty(id) Then\n									Baco.ProjectNumberFin.Value = id(0)\n									Baco.NewFinPrDesc.Value = id(1)\n								End If\n							End Sub\n							</script>\n\n\nDim id: \n\nid = window.showModalDialog(\n\n\"BacoBrowser.asp?Name=CSPSAResourceProjects&ResultCols=p%2EProjectNr%2Cp%2EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (m.FromDate <= {d '2014-08-18'} AND ISNULL(m.UntilDate, '22991231') >= {d '2014-08-18'})) AND ((p.InitialStartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (p.InitialStartDate <= {d '2014-08-18'} AND ISNULL(p.InitialEndDate, '22991231') >= {d '2014-08-18'})) AND p.Status = 'A' AND  (p.ProjectNr IN (SELECT r.ProjectNr FROM CSPSAProjectRates r  LEFT OUTER JOIN Items i ON i.ItemCode = r.Component  WHERE r.ProjectNr IS NOT NULL AND (i.Type = 'S') AND (r.EmpID IS NULL OR r.empID=164) AND ((r.StartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (r.StartDate <= {d '2014-08-18'} AND ISNULL(r.EndDate, '22991231') >= {d '2014-08-18'}))) OR  p.IDCustomer IN (   SELECT r.Account FROM CSPSAProjectRates r  WHERE r.Account = p.IDCustomer AND ((r.StartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (r.StartDate <= {d '2014-08-18'} AND ISNULL(r.EndDate, '22991231') >= {d '2014-08-18'}))  AND r.Account IS NOT NULL))\"\n, \nwindow, \n\"dialogWidth:550px;resizable:yes\")\n\n\n								If IsNull(id) Then\n									Baco.ProjectNumberFin.Value = Empty\n									Baco.NewFinPrDesc.Value = Empty\n								ElseIf Not IsEmpty(id) Then\n									Baco.ProjectNumberFin.Value = id(0)\n									Baco.NewFinPrDesc.Value = id(1)\n								End If\n\n\ndoet eerst:\n1. https://synergy.everest.nl/Synergy/docs/BacoBrowser.asp?Name=CSPSAResourceProjects&ResultCols=p%2EProjectNr%2Cp%2EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (m.FromDate <= {d '2014-08-18'} AND ISNULL(m.UntilDate, '22991231') >= {d '2014-08-18'})) AND ((p.InitialStartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (p.InitialStartDate <= {d '2014-08-18'} AND ISNULL(p.InitialEndDate, '22991231') >= {d '2014-08-18'})) AND p.Status = 'A'\n2. https://synergy.everest.nl/Synergy/docs/SystemEmpty.asp\n3. https://synergy.everest.nl/Synergy/docs/BacoBrowserSearch.asp?Name=CSPSAResourceProjects&ResultCols=p%2EProjectNr%2Cp%2EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate%20BETWEEN%20{d%20'2014-08-18'}%20AND%20{d%20'2014-08-24'})%20OR%20(m.FromDate%20<=%20{d%20'2014-08-18'}%20AND%20ISNULL(m.UntilDate,%20'22991231')%20>=%20{d%20'2014-08-18'}))%20AND%20((p.InitialStartDate%20BETWEEN%20{d%20'2014-08-18'}%20AND%20{d%20'2014-08-24'})%20OR%20(p.InitialStartDate%20<=%20{d%20'2014-08-18'}%20AND%20ISNULL(p.InitialEndDate,%20'22991231')%20>=%20{d%20'2014-08-18'}))%20AND%20p.Status%20=%20'A'\n4. https://synergy.everest.nl/Synergy/docs/BacoBrowser.css\n5. https://synergy.everest.nl/Synergy/docs/Spaceinvador.css\n\n\n\nlogged:\nhttps://synergy.everest.nl/Synergy/docs/BacoBrowserSearch.asp?Name=CSPSAResourceProjects&ResultCols=p%2EProjectNr%2Cp%2EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate%20BETWEEN%20{d%20'2014-08-18'}%20AND%20{d%20'2014-08-24'})%20OR%20(m.FromDate%20<=%20{d%20'2014-08-18'}%20AND%20ISNULL(m.UntilDate,%20'22991231')%20>=%20{d%20'2014-08-18'}))%20AND%20((p.InitialStartDate%20BETWEEN%20{d%20'2014-08-18'}%20AND%20{d%20'2014-08-24'})%20OR%20(p.InitialStartDate%20<=%20{d%20'2014-08-18'}%20AND%20ISNULL(p.InitialEndDate,%20'22991231')%20>=%20{d%20'2014-08-18'}))%20AND%20p.Status%20=%20'A'\n\ncopied from url:\nhttps://synergy.everest.nl/Synergy/docs/BacoBrowserSearch.asp?Name=CSPSAResourceProjects&ResultCols=p%252EProjectNr%252Cp%252EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate%20BETWEEN%20%7Bd%20%272014-08-11%27%7D%20AND%20%7Bd%20%272014-08-17%27%7D)%20OR%20(m.FromDate%20%3C=%20%7Bd%20%272014-08-11%27%7D%20AND%20ISNULL(m.UntilDate,%20%2722991231%27)%20%3E=%20%7Bd%20%272014-08-11%27%7D))%20AND%20((p.InitialStartDate%20BETWEEN%20%7Bd%20%272014-08-11%27%7D%20AND%20%7Bd%20%272014-08-17%27%7D)%20OR%20(p.InitialStartDate%20%3C=%20%7Bd%20%272014-08-11%27%7D%20AND%20ISNULL(p.InitialEndDate,%20%2722991231%27)%20%3E=%20%7Bd%20%272014-08-11%27%7D))%20AND%20p.Status%20=%20%27A%27\n\nhttps://synergy.everest.nl/Synergy/docs/BacoBrowserSearch.asp?Name=CSPSAResourceProjects&ResultCols=p%252EProjectNr%252Cp%252EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate%20BETWEEN%20%7Bd%20%272014-08-11%27%7D%20AND%20%7Bd%20%272014-08-17%27%7D)%20OR%20(m.FromDate%20%3C=%20%7Bd%20%272014-08-11%27%7D%20AND%20ISNULL(m.UntilDate,%20%2722991231%27)%20%3E=%20%7Bd%20%272014-08-11%27%7D))%20AND%20((p.InitialStartDate%20BETWEEN%20%7Bd%20%272014-08-11%27%7D%20AND%20%7Bd%20%272014-08-17%27%7D)%20OR%20(p.InitialStartDate%20%3C=%20%7Bd%20%272014-08-11%27%7D%20AND%20ISNULL(p.InitialEndDate,%20%2722991231%27)%20%3E=%20%7Bd%20%272014-08-11%27%7D))%20AND%20p.Status%20=%20%27A%27\n\n\nshould be:\nhttps://synergy.everest.nl/Synergy/docs/BacoBrowserSearch.asp?Name=CSPSAResourceProjects\n&ResultCols=p%2EProjectNr%2Cp%2EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate%20BETWEEN%20{d%20'2014-08-18'}%20AND%20{d%20'2014-08-24'})%20OR%20(m.FromDate%20<=%20{d%20'2014-08-18'}%20AND%20ISNULL(m.UntilDate,%20'22991231')%20>=%20{d%20'2014-08-18'}))%20AND%20((p.InitialStartDate%20BETWEEN%20{d%20'2014-08-18'}%20AND%20{d%20'2014-08-24'})%20OR%20(p.InitialStartDate%20<=%20{d%20'2014-08-18'}%20AND%20ISNULL(p.InitialEndDate,%20'22991231')%20>=%20{d%20'2014-08-18'}))%20AND%20p.Status%20=%20'A'",
+			"settings":
+			{
+				"buffer_size": 7551,
+				"line_ending": "Windows",
+				"name": "test"
+			}
+		},
+		{
+			"contents": "<form id=\"Baco\" action=\"CSPSAHours.asp?Action=0\" method=\"POST\">\n		\n<div class=\"BtnBar\">\n	\n	<button class=\"btn\" id=\"btnSave\" accesskey=\"S\"><u>S</u>-Bewaren</button>\n	<button class=\"btn\" id=\"btnInDien\" accesskey=\"1\"><u>1</u>-Boeken</button>	\n	\n	<button class=\"btn\" id=\"btnAbsences\" accesskey=\"4\"><u>4</u>-Verzuim</button>\n	<button class=\"btn\" id=\"btnCopyPlanning\" accesskey=\"5\"><u>5</u>-Kopiëren Planning</button>\n	<button class=\"btn\" id=\"btnTimeSheet\" accesskey=\"6\"><u>6</u>-Urenstaat</button>\n	\n	\n	<button class=\"btn\" id=\"btnRefresh\" accesskey=\"R\"><u>R</u>-Actualiseren</button>\n	\n	<script language=\"VBS\">\n	Function BacoParseNumber(expr)\n	Dim test: test = FormatNumber(1234.5, 1, True, False, True)\n	Dim curDecSep: curDecSep = Left(Right(test, 2), 1)\n	Dim i, bn, c\n	Dim usedDecSep, usedThoSep\n	usedDecSep = \",\"\n	usedThoSep = \".\"\n	If Len(\".\") > 0 Then\n		i = InStr(expr, \".\")\n		If i > 0 Then\n			If Len(expr) < i + 3 Then\n				usedDecSep = \".\"\n				usedThoSep = \",\"\n			End If\n		End If\n	Else\n		Dim otherDecSep\n		If \",\" = \".\" Then\n			otherDecSep = \",\"\n		Else\n			otherDecSep = \",\"\n		End If\n		i = InStr(expr, otherDecSep)\n		If i > 0 Then usedDecSep = otherDecSep\n	End If\n	For i = 1 To Len(expr)\n		c = Mid(expr, i, 1)\n		If c = usedDecSep Then\n			bn = bn & curDecSep\n		ElseIf c <> usedThoSep Then\n			bn = bn & c\n		End If\n	Next\n	If IsNumeric(bn) Then BacoParseNumber = CDbl(bn)\nEnd Function\nFunction BacoFormatNumber(expr, NumDigits)\n	Dim cfn: cfn = FormatNumber(expr, NumDigits, True, False, True)\n	Dim test: test = FormatNumber(1234.5, 1, True, False, True)\n	Dim curDecSep: curDecSep = Left(Right(test, 2), 1)\n	Dim curThoSep\n	If Len(test) < 7 Then\n		curThoSep = \"\"\n	Else\n		curThoSep = Mid(test, 2, 1)\n	End If\n	Dim i, c, fn\n	For i = 1 To Len(cfn)\n		c = Mid(cfn, i, 1)\n		If c = curThoSep Then\n			fn = fn & \".\"\n		ElseIf c = curDecSep Then\n			fn = fn & \",\"\n		Else\n			fn = fn & c\n		End If\n	Next\n	BacoFormatNumber = fn\nEnd Function\n\n\n	Sub btnRefresh_OnClick()\n		baco.action = \"CSPSAHours.asp?EmployeeID=164\"\n		wait.style.display = \"inline\"\n		baco.submit\n	End Sub\n		\n	Sub btnSave_OnClick()\n		baco.action = \"CSPSAHours.asp?Action=1\"\n		wait.style.display = \"inline\"\n		baco.Submit\n	End Sub\n\n	Sub btnAbsences_OnClick()\n		Dim id, sWhere\n		sWhere = \"t.ID IN ('10','11','12') OR t.ID IN (SELECT AbsenceType FROM CSPSAAbsenceTypes)\"\n		id = window.showModalDialog(\"BacoBrowser.asp?Name=RequestTypes&ResultCols=t%2EID%2Ct%2EDescription&Where=\" & MyBacoURLEncode(sWhere), window, \"dialogWidth:550px;resizable:yes\")\n		If Not IsEmpty(id) Then\n			baco.action = \"EPRequest.asp?EmployeeID=164&Type=\" & MyBacoURLEncode(id(0))\n			baco.StartDate.Value = NULL\n			baco.SubMit \n		End If\n	End Sub\n\n	Function MyBacoURLEncode(ByVal s)\n	   Dim i, c, res\n	   For i = 1 To Len(s)\n	      c = Mid(s, i, 1)\n	      Select Case c\n	      Case \" \"\n	         res = res & \"+\"\n	      Case \"#\", \"%\", \"&\", \"?\", \"\"\"\", \"'\", \">\", \"+\"\n	         res = res & \"%\" & Right(\"00\" & Hex(Asc(c)), 2)\n	      Case Else\n	         res = res & c\n	      End Select\n	   Next\n	   MyBacoURLEncode = res\n	End Function\n	\n	Sub btnTimeSheet_OnClick()\n		baco.action = \"CSPSATimeSheet.asp?fromhourentry=1&Resource=164&startdate=18-08-2014&enddate=24-08-2014&action=1&Project=\"\n		baco.SubMit \n	End Sub\n	\n	Sub btnInDien_OnClick()\n		Dim Result\n		Dim EnteredHours, RoosterHours\n		\n		EnteredHours = BacoParseNumber(Baco.EnteredHours.Value)\n		RoosterHours = BacoParseNumber(Baco.RoosterHours.Value)\n		\n		If EnteredHours < RoosterHours Then\n			Result = MsgBox (\"Aantal geboekte uren is kleiner dan het aantal uren volgens het rooster\" & vbNewLine & \"Wilt u deze uren indienen?\" ,vbYesNo + vbDefaultButton2, Waarschuwing)\n			If Result = vbYes Then\n				baco.action = \"CSPSAHours.asp?Action=2\"\n				wait.style.display = \"inline\"\n				baco.Submit\n			End If\n			\n		ElseIf EnteredHours > RoosterHours Then\n			Result = MsgBox (\"Aantal geboekte uren is groter dan het aantal uren volgens het rooster\" & vbNewLine & \"Wilt u deze uren indienen?\" ,vbYesNo + vbDefaultButton2, Waarschuwing)\n			If Result = vbYes Then\n				baco.action = \"CSPSAHours.asp?Action=2\"\n				wait.style.display = \"inline\"\n				baco.Submit\n			End If\n			\n		Else \n			baco.action = \"CSPSAHours.asp?Action=2\"\n			wait.style.display = \"inline\"\n			baco.Submit\n			\n		End If\n	End Sub\n	\n	Sub btnApprove_OnClick()\n		baco.action = \"CSPSAHours.asp?Action=3\"\n		wait.style.display = \"inline\"\n		baco.Submit\n	End Sub\n	\n	Sub btnReject_OnClick()\n		baco.action = \"CSPSAHours.asp?Action=4\"\n		wait.style.display = \"inline\"\n		baco.Submit\n	End Sub\n	\n	Sub btnCopyPlanning_OnClick()\n		baco.action = \"CSPSAHours.asp?Action=7\"\n		wait.style.display = \"inline\"\n		baco.Submit\n	End Sub\n	</script>\n</div>\n\n	<table class=\"Form\">\n		<colgroup><col width=\"15%\"><col width=\"85%\">\n		\n		</colgroup><tbody><tr class=\"Section\"><th colspan=\"2\">&nbsp;Criteria</th></tr>\n		<tr class=\"Separator\"><td colspan=\"2\" class=\"Sep1\"></td></tr>\n		\n		<tr>\n			<td>Medewerker</td>\n			<td class=\"Field\">Martin van Es - Everest B.V.<input type=\"Hidden\" id=\"gResID\" name=\"gResID\" value=\"164\"></td>\n		</tr>\n		<tr>\n			<td>Week</td>\n			<td class=\"Field\">\n	<button class=\"btn\" id=\"btnStartDatePrev\" title=\"Vorige week\" accesskey=\"<\"> &lt; </button>&nbsp;\n	<button class=\"Calendar\" id=\"btnStartDate\"></button><span>&nbsp;Week 34 - 2014&nbsp;</span>\n	<button class=\"btn\" id=\"btnStartDateNext\" title=\"Volgende week\" accesskey=\">\"> &gt; </button>\n	\n	<input type=\"Hidden\" id=\"StartDatePrev\" name=\"StartDatePrev\" value=\"11-08-2014\">\n	<input type=\"Hidden\" id=\"StartDate\" name=\"StartDate\" value=\"18-08-2014\">\n	<input type=\"Hidden\" id=\"StartDateNext\" name=\"StartDateNext\" value=\"25-08-2014\">\n	\n	<script language=\"VBS\">\n		Sub btnStartDate_OnClick() \n			Dim sDate: sDate = Baco.StartDate.value\n			Dim d: d = window.showModalDialog(\"BacoCalendar.asp?RawDate=2&Date=\" & sDate,,\"dialogHeight: 320px; dialogwidth: 275px\")\n			If IsArray(d) And Not IsEmpty(d) Then\n				Baco.StartDate.value = d(1)\n				Baco.Submit\n			End If\n		End Sub\n		\n		Sub btnStartDatePrev_OnClick()\n			Baco.StartDate.value = Baco.StartDatePrev.Value\n			Baco.Submit\n		End Sub\n		\n		Sub btnStartDateNext_OnClick()\n			Baco.StartDate.value = Baco.StartDateNext.Value\n			Baco.Submit\n		End Sub\n	</script>\n	</td>\n		</tr>\n	</tbody></table>\n\n\n		<input type=\"Hidden\" id=\"HourDelete\" name=\"HourDelete\" value=\"\">\n		<input type=\"Hidden\" id=\"FinDelete\" name=\"FinDelete\" value=\"\">\n		\n		<table class=\"Grid\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n			<colgroup><col width=\"10%\"><col width=\"16%\"><col width=\"10%\"><col width=\"16%\"><col width=\"6%\"><col width=\"6%\"><col width=\"6%\"><col width=\"6%\"><col width=\"6%\"><col width=\"6%\"><col width=\"6%\"><col width=\"6%\">\n			</colgroup><tbody><tr class=\"DataOutline\"><td colspan=\"12\"></td></tr>\n			\n			\n			<tr class=\"DataOutline1\" onclick=\"tblClick()\"><td colspan=\"12\">Uren</td></tr>\n			\n			<tr class=\"Header\">\n				<td align=\"center\">Project</td>\n				<td align=\"center\">Omschrijving</td>\n				<td align=\"center\">Uur / Artikel</td>\n				<td align=\"center\">Omschrijving</td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=18-08-2014\">ma<br>18-8</a></td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=19-08-2014\">di<br>19-8</a></td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=20-08-2014\">wo<br>20-8</a></td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=21-08-2014\">do<br>21-8</a></td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=22-08-2014\">vr<br>22-8</a></td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=23-08-2014\">za<br>23-8</a></td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=24-08-2014\">zo<br>24-8</a></td>\n				\n				<td align=\"center\">Actie</td>\n			</tr>\n			<tr>\n						<td>\n							<input type=\"text\" id=\"ProjectNumberHour\" name=\"ProjectNumberHour\" maxlength=\"20\" style=\"width: 100%; text-transform: uppercase\" language=\"VBS\" onkeydown=\"SelectProjectNumberHour_keydown\" class=\"SaveHistory\" title=\"F2 - Zoeken\">\n							<script language=\"VBS\">\n							Sub SelectProjectNumberHour_keydown\n								If window.event.keycode = 113 Then\n									SelectProjectNumberHour_clicked\n									window.event.returnValue = False\n								End If\n							End Sub\n							Sub SelectProjectNumberHour_clicked\n								Dim id: id = window.showModalDialog(\"BacoBrowser.asp?Name=CSPSAResourceProjects&ResultCols=p%2EProjectNr%2Cp%2EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (m.FromDate <= {d '2014-08-18'} AND ISNULL(m.UntilDate, '22991231') >= {d '2014-08-18'})) AND ((p.InitialStartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (p.InitialStartDate <= {d '2014-08-18'} AND ISNULL(p.InitialEndDate, '22991231') >= {d '2014-08-18'})) AND p.Status = 'A'\", window, \"dialogWidth:550px;resizable:yes\")\n								If IsNull(id) Then\n									Baco.ProjectNumberHour.Value = Empty\n									Baco.NewHourPrDesc.Value = Empty\n								ElseIf Not IsEmpty(id) Then\n									Baco.ProjectNumberHour.Value = id(0)\n									Baco.NewHourPrDesc.Value = id(1)\n								End If\n							End Sub\n							</script>\n						</td>\n						\n						<td><input type=\"Text\" class=\"ReadOnly SaveHistory\" id=\"NewHourPrDesc\" name=\"NewHourPrDesc\" style=\"width: 100%\" tabindex=\"-1\" readonly=\"\"></td>\n						\n						<td>\n							<input type=\"text\" id=\"ItemCodeHour\" name=\"ItemCodeHour\" style=\"width: 100%; text-transform: uppercase\" maxlength=\"30\" language=\"VBS\" onkeydown=\"SelectItemCodeHour_keydown\" class=\"SaveHistory\" title=\"F2 - Zoeken\">\n							<script language=\"VBS\">\n							Sub SelectItemCodeHour_keydown\n								If window.event.keycode = 113 Then\n									SelectItemCodeHour_clicked\n									window.event.returnValue = False\n								End If\n							End Sub\n							Sub SelectItemCodeHour_clicked\n								Dim sProjectString: sProjectString = MyBacoURLEncode(RTrim(LTrim(Baco.ProjectNumberHour.Value)))\n								Dim sAccount\n								Dim id, bFound\n								\n										bFound = False\n										\n										\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"11.100.007\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"20.867.039\") Then sAccount = \"{B06E9A08-626A-466B-9447-5E9B19F05E20}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"20.880\") Then sAccount = \"{61269BAE-2253-4CB2-BDCA-3074ADBF5796}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"20.755.010\") Then sAccount = \"{1E7C0811-FEB1-47C2-8072-900B2414E783}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"11.100.006\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"20.867.042\") Then sAccount = \"{B06E9A08-626A-466B-9447-5E9B19F05E20}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"20.897.002\") Then sAccount = \"{241BFA5F-3537-4C09-B2A6-4447030F1840}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"20.873\") Then sAccount = \"{C399462F-625C-4996-9820-1C654F8CB987}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"20.895\") Then sAccount = \"{65B44B1D-3618-46FA-A381-6440D4EF77E6}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"11.100.004\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"16.100.001.005.004\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"13.400.003\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"15.001.002.001\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"20.865\") Then sAccount = \"{D8E63EBA-1074-46B6-B8E8-5DAAB4C9587F}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"20.873.004\") Then sAccount = \"{C399462F-625C-4996-9820-1C654F8CB987}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"18.200\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"20.897.004\") Then sAccount = \"{241BFA5F-3537-4C09-B2A6-4447030F1840}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"20.899\") Then sAccount = \"{648084EB-ABFA-4888-8A31-C0C8F4BAF349}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"20.879.010\") Then sAccount = \"{1BF8AA05-93BD-455E-A866-E72C081BAA20}\"\n											\n												If Trim(Baco.ProjectNumberHour.Value) = Trim(\"16.500\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n										\n										If bFound Then\n											id = window.showModalDialog(\"BacoBrowser.asp?Name=ItemsAvailable&ResultCols=Items%2EItemCode%2CItems%2EDescription%2CItemCountries%2EAvailableFrom%2CItemCountries%2EAvailableUntil&Options=1&Where=Items.Type = 'L'\", window, \"dialogWidth:550px;resizable:yes\")\n										Else\n											\n												id = window.showModalDialog(\"BacoBrowser.asp?Name=CSPSAResourceComponentsFlexLim&ResultCols=i%2EItemCode%2Cpr%2EDescription%2Cpr%2EStartDate%2Cpr%2EEndDate&Options=1&ParamName=pr.EmpID&ParamValue=164&ParamName=i.Type&ParamValue=L&ParamName=pr.ProjectNr&ParamValue=\" & sProjectString & \"&ParamName=pr.Account&ParamValue=\" & sAccount & \"&ParamName=qr.EmpID&ParamValue=164&ParamName=qr.ProjectNr&ParamValue=\" & sProjectString & \"&ParamName=qr.Account&ParamValue=\" & sAccount & \"&ParamName=qr.StartDate&ParamValue=\" & \"24%2D8%2D2014\" & \"&ParamName=qr.EndDate&ParamValue=\" & \"18%2D8%2D2014\" & \"&Where=((pr.StartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (pr.StartDate <= {d '2014-08-18'} AND ISNULL(pr.EndDate, '22991231') >= {d '2014-08-18'}))\", window, \"dialogWidth:550px;resizable:yes\")\n											\n										End If\n									\n								\n								If IsNull(id) Then\n									Baco.ItemCodeHour.Value = Empty\n									Baco.NewHourItemDesc.Value = Empty\n								ElseIf Not IsEmpty(id) Then\n									Baco.ItemCodeHour.Value = id(0)\n									Baco.NewHourItemDesc.Value = id(1)\n								End If\n							End Sub\n							</script>\n						</td>							\n						\n						<td><input type=\"Text\" class=\"ReadOnly SaveHistory\" id=\"NewHourItemDesc\" name=\"NewHourItemDesc\" style=\"width: 100%\" tabindex=\"-1\" readonly=\"\"></td>\n						<td><input type=\"text\" id=\"ItemCountHour\" name=\"ItemCountHour\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td><input type=\"text\" id=\"ItemCountHour\" name=\"ItemCountHour\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td><input type=\"text\" id=\"ItemCountHour\" name=\"ItemCountHour\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td><input type=\"text\" id=\"ItemCountHour\" name=\"ItemCountHour\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td><input type=\"text\" id=\"ItemCountHour\" name=\"ItemCountHour\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td><input type=\"text\" id=\"ItemCountHour\" name=\"ItemCountHour\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td><input type=\"text\" id=\"ItemCountHour\" name=\"ItemCountHour\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td class=\"RowNumber\" align=\"Center\" nowrap=\"\"><button class=\"Browser\" title=\"Bewaren\" style=\"width:16px; background-image: url(images/icon_enter.gif)\" language=\"VBS\" onclick=\"Baco.Action='CSPSAHours.asp?Action=1': wait.style.display ='inline' :Baco.Submit\" id=\"button1\" name=\"button1\"></button></td></tr>\n			<tr class=\"DataOutline1\"><td colspan=\"12\"></td></tr>\n			\n			<tr class=\"DataOutline4\" onclick=\"tblClick()\"><td colspan=\"12\">Diversen</td></tr>\n			\n			<tr class=\"Header\">\n				<td align=\"center\">Project</td>\n				<td align=\"center\">Omschrijving</td>\n				<td align=\"center\">Artikel</td>\n				<td align=\"center\">Omschrijving</td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=18-08-2014\">ma<br>18-8</a></td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=19-08-2014\">di<br>19-8</a></td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=20-08-2014\">wo<br>20-8</a></td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=21-08-2014\">do<br>21-8</a></td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=22-08-2014\">vr<br>22-8</a></td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=23-08-2014\">za<br>23-8</a></td>\n				\n					<td align=\"center\"><a href=\"CSPSAHoursDaily.asp?gResID=164&amp;gDate=24-08-2014\">zo<br>24-8</a></td>\n				\n				<td align=\"center\">Actie</td>\n			</tr>\n			<tr>\n						<td>\n							<input type=\"text\" id=\"ProjectNumberFin\" name=\"ProjectNumberFin\" maxlength=\"20\" style=\"width: 100%; text-transform: uppercase\" language=\"VBS\" onkeydown=\"SelectProjectNumberFin_keydown\" class=\"SaveHistory\" title=\"F2 - Zoeken\">\n							<script language=\"VBS\">\n							Sub SelectProjectNumberFin_keydown\n								If window.event.keycode = 113 Then\n									SelectProjectNumberFin_clicked\n									window.event.returnValue = False\n								End If\n							End Sub\n							Sub SelectProjectNumberFin_clicked\n								Dim id: id = window.showModalDialog(\"BacoBrowser.asp?Name=CSPSAResourceProjects&ResultCols=p%2EProjectNr%2Cp%2EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (m.FromDate <= {d '2014-08-18'} AND ISNULL(m.UntilDate, '22991231') >= {d '2014-08-18'})) AND ((p.InitialStartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (p.InitialStartDate <= {d '2014-08-18'} AND ISNULL(p.InitialEndDate, '22991231') >= {d '2014-08-18'})) AND p.Status = 'A' AND  (p.ProjectNr IN (SELECT r.ProjectNr FROM CSPSAProjectRates r  LEFT OUTER JOIN Items i ON i.ItemCode = r.Component  WHERE r.ProjectNr IS NOT NULL AND (i.Type = 'S') AND (r.EmpID IS NULL OR r.empID=164) AND ((r.StartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (r.StartDate <= {d '2014-08-18'} AND ISNULL(r.EndDate, '22991231') >= {d '2014-08-18'}))) OR  p.IDCustomer IN (   SELECT r.Account FROM CSPSAProjectRates r  WHERE r.Account = p.IDCustomer AND ((r.StartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (r.StartDate <= {d '2014-08-18'} AND ISNULL(r.EndDate, '22991231') >= {d '2014-08-18'}))  AND r.Account IS NOT NULL))\", window, \"dialogWidth:550px;resizable:yes\")\n								If IsNull(id) Then\n									Baco.ProjectNumberFin.Value = Empty\n									Baco.NewFinPrDesc.Value = Empty\n								ElseIf Not IsEmpty(id) Then\n									Baco.ProjectNumberFin.Value = id(0)\n									Baco.NewFinPrDesc.Value = id(1)\n								End If\n							End Sub\n							</script>\n						</td>\n						\n						<td><input type=\"Text\" class=\"ReadOnly SaveHistory\" id=\"NewFinPrDesc\" name=\"NewFinPrDesc\" style=\"width: 100%\" tabindex=\"-1\" readonly=\"\"></td>\n						\n						<td>\n							<input type=\"text\" id=\"ItemCodeFin\" name=\"ItemCodeFin\" style=\"width: 100%; text-transform: uppercase\" maxlength=\"30\" language=\"VBS\" onkeydown=\"SelectItemCodeFin_keydown\" class=\"SaveHistory\" title=\"F2 - Zoeken\">\n							<script language=\"VBS\">\n							Sub SelectItemCodeFin_keydown\n								If window.event.keycode = 113 Then\n									SelectItemCodeFin_clicked\n									window.event.returnValue = False\n								End If\n							End Sub\n							Sub SelectItemCodeFin_clicked\n								Dim sProjectString: sProjectString = MyBacoURLEncode(RTrim(LTrim(Baco.ProjectNumberFin.Value)))\n								Dim sAccount\n								Dim id, bFound\n								\n										bFound = False\n										\n										\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"11.100.007\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"20.867.039\") Then sAccount = \"{B06E9A08-626A-466B-9447-5E9B19F05E20}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"20.880\") Then sAccount = \"{61269BAE-2253-4CB2-BDCA-3074ADBF5796}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"20.755.010\") Then sAccount = \"{1E7C0811-FEB1-47C2-8072-900B2414E783}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"11.100.006\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"20.867.042\") Then sAccount = \"{B06E9A08-626A-466B-9447-5E9B19F05E20}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"20.897.002\") Then sAccount = \"{241BFA5F-3537-4C09-B2A6-4447030F1840}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"20.873\") Then sAccount = \"{C399462F-625C-4996-9820-1C654F8CB987}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"20.895\") Then sAccount = \"{65B44B1D-3618-46FA-A381-6440D4EF77E6}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"11.100.004\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"16.100.001.005.004\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"13.400.003\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"15.001.002.001\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"20.865\") Then sAccount = \"{D8E63EBA-1074-46B6-B8E8-5DAAB4C9587F}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"20.873.004\") Then sAccount = \"{C399462F-625C-4996-9820-1C654F8CB987}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"18.200\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"20.897.004\") Then sAccount = \"{241BFA5F-3537-4C09-B2A6-4447030F1840}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"20.899\") Then sAccount = \"{648084EB-ABFA-4888-8A31-C0C8F4BAF349}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"20.879.010\") Then sAccount = \"{1BF8AA05-93BD-455E-A866-E72C081BAA20}\"\n											\n												If Trim(Baco.ProjectNumberFin.Value) = Trim(\"16.500\") Then sAccount = \"{84397F54-3DF4-413B-B6D3-11B31ECA26A4}\"\n											\n										\n										If bFound Then\n											id = window.showModalDialog(\"BacoBrowser.asp?Name=ItemsAvailable&ResultCols=Items%2EItemCode%2CItems%2EDescription%2CItemCountries%2EAvailableFrom%2CItemCountries%2EAvailableUntil&Options=1&Where=Items.Type = 'S'\", window, \"dialogWidth:550px;resizable:yes\")\n										Else\n											\n												id = window.showModalDialog(\"BacoBrowser.asp?Name=CSPSAResourceComponentsFlexLim&ResultCols=i%2EItemCode%2Cpr%2EDescription%2Cpr%2EStartDate%2Cpr%2EEndDate&Options=1&ParamName=pr.EmpID&ParamValue=164&ParamName=i.Type&ParamValue=S&ParamName=pr.ProjectNr&ParamValue=\" & sProjectString & \"&ParamName=pr.Account&ParamValue=\" & sAccount & \"&ParamName=qr.EmpID&ParamValue=164&ParamName=qr.ProjectNr&ParamValue=\" & sProjectString & \"&ParamName=qr.Account&ParamValue=\" & sAccount & \"&ParamName=qr.StartDate&ParamValue=\" & \"24%2D8%2D2014\" & \"&ParamName=qr.EndDate&ParamValue=\" & \"18%2D8%2D2014\" & \"&Where=((pr.StartDate BETWEEN {d '2014-08-18'} AND {d '2014-08-24'}) OR (pr.StartDate <= {d '2014-08-18'} AND ISNULL(pr.EndDate, '22991231') >= {d '2014-08-18'}))\", window, \"dialogWidth:550px;resizable:yes\")\n											\n										End If\n									\n								\n								If IsNull(id) Then\n									Baco.ItemCodeFin.Value = Empty\n									Baco.NewFinItemDesc.Value = Empty\n								ElseIf Not IsEmpty(id) Then\n									Baco.ItemCodeFin.Value = id(0)\n									Baco.NewFinItemDesc.Value = id(1)\n								End If\n							End Sub\n							</script>\n						</td>							\n						\n						<td><input type=\"Text\" class=\"ReadOnly SaveHistory\" id=\"NewFinItemDesc\" name=\"NewFinItemDesc\" style=\"width: 100%\" tabindex=\"-1\" readonly=\"\"></td>\n						<td><input type=\"text\" id=\"ItemCountFin\" name=\"ItemCountFin\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td><input type=\"text\" id=\"ItemCountFin\" name=\"ItemCountFin\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td><input type=\"text\" id=\"ItemCountFin\" name=\"ItemCountFin\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td><input type=\"text\" id=\"ItemCountFin\" name=\"ItemCountFin\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td><input type=\"text\" id=\"ItemCountFin\" name=\"ItemCountFin\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td><input type=\"text\" id=\"ItemCountFin\" name=\"ItemCountFin\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td><input type=\"text\" id=\"ItemCountFin\" name=\"ItemCountFin\" value=\"\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\"SaveHistory\" language=\"VBS\" onkeypress=\"window.event.returnValue = BacoValidateNumber(window.event.keycode, True)\"></td><td class=\"RowNumber\" align=\"Center\" nowrap=\"\"><button class=\"Browser\" title=\"Bewaren\" style=\"width:16px; background-image: url(images/icon_enter.gif)\" language=\"VBS\" onclick=\"Baco.Action='CSPSAHours.asp?Action=1': wait.style.display ='inline' :Baco.Submit\" id=\"button1\" name=\"button1\"></button></td></tr>\n			<tr class=\"DataOutline4\"><td colspan=\"12\"></td></tr>\n			\n			<tr class=\"DataOutline5\" onclick=\"tblClick()\"><td colspan=\"12\">Totalen</td></tr>\n			\n			<tr class=\"Header\">\n				<td align=\"Left\" colspan=\"4\">&nbsp;Dag</td>\n				\n					<td align=\"center\">ma<br>18-8</td>\n				\n					<td align=\"center\">di<br>19-8</td>\n				\n					<td align=\"center\">wo<br>20-8</td>\n				\n					<td align=\"center\">do<br>21-8</td>\n				\n					<td align=\"center\">vr<br>22-8</td>\n				\n					<td align=\"center\">za<br>23-8</td>\n				\n					<td align=\"center\">zo<br>24-8</td>\n				\n				<td align=\"center\">Totaal</td>\n			</tr>\n			<tr><td colspan=\"4\" style=\"BACKGROUND-COLOR: #e7e7e7\">&nbsp;Uren</td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: red\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: red\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: red\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: red\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: red\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: black\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: black\" class=\" ReadOnly SaveHistory\"></td><td class=\"RowNumber\" readonly=\"\" align=\"Right\" style=\"text-align:right;Font-Size=8pt;color:red\" nowrap=\"\">&nbsp;0,00</td><input type=\"Hidden\" id=\"EnteredHours\" name=\"EnteredHours\" value=\"0,00\"></tr><tr><td colspan=\"4\" style=\"BACKGROUND-COLOR: #e7e7e7\">&nbsp;Planning</td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: red\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: red\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: red\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: red\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: red\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: black\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right; color: black\" class=\" ReadOnly SaveHistory\"></td><td class=\"RowNumber\" readonly=\"\" align=\"Right\" style=\"text-align:right;Font-Size=8pt;color:red\" nowrap=\"\">&nbsp;0,00</td><input type=\"Hidden\" id=\"PlannedHours\" name=\"PlannedHours\" value=\"0,00\"></tr><tr><td colspan=\"4\" style=\"BACKGROUND-COLOR: #e7e7e7\">&nbsp;Rooster</td><td><input type=\"text\" readonly=\"\" value=\"8,00\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"8,00\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"8,00\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"8,00\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"8,00\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\" ReadOnly SaveHistory\"></td><td><input type=\"text\" readonly=\"\" value=\"\" tabindex=\"-1\" maxlength=\"19\" style=\"width: 100%; text-align: right\" class=\" ReadOnly SaveHistory\"></td><td class=\"RowNumber\" align=\"Right\" style=\"text-align:right;Font-Size=8pt\" nowrap=\"\">&nbsp;40,00</td><input type=\"Hidden\" id=\"RoosterHours\" name=\"RoosterHours\" value=\"40,00\"></tr>\n			<tr class=\"DataOutline5\"><td colspan=\"12\"></td></tr>\n			\n			\n		</tbody></table>\n	</form>\n\n",
+			"settings":
+			{
+				"buffer_size": 31832,
+				"line_ending": "Windows",
+				"name": "<form id=\"Baco\" action=\"CSPSAHours.asp?Action=0\" m"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -352,6 +426,7 @@
 	},
 	"file_history":
 	[
+		"/D/synergyChromeBookmarklet.min.js",
 		"/C/Windows/System32/drivers/etc/hosts",
 		"/D/Everest/Projecten/Generic Style/components/ClientSideValidator/validator.xsl",
 		"/D/Everest/Projecten/Generic Style/components/ClientSideValidator/ClientSideValidator.js",
@@ -478,8 +553,7 @@
 		"/D/Everest/Projecten/Dash/master/public/stylesheets/application_import.css",
 		"/D/Everest/Projecten/Dash/master/public/stylesheets/bootstrap-combined1.min.css",
 		"/D/Everest/Projecten/Dash/master/public/stylesheets/bootstrap.css",
-		"/D/Everest/Projecten/Dash/master/public/stylesheets/application_static.css",
-		"/D/Everest/Projecten/Dash/master/public/stylesheets/bootstrap.min.js"
+		"/D/Everest/Projecten/Dash/master/public/stylesheets/application_static.css"
 	],
 	"find":
 	{
@@ -505,6 +579,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"syner",
+			"hourCode",
 			"market",
 			"MainCtrl",
 			"myApp",
@@ -594,8 +670,239 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "readme.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 769,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								644,
+								644
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/synergyChromeBookmarklet.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4727,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4425,
+								4425
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2187.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 543,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48,
+								48
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Gruntfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1928,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1341,
+								1341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 480.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "synergyChromeBookmarklet.min.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2139,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								58,
+								2139
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 17264.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 248,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								248,
+								248
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7551,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6925,
+								6925
+							]
+						],
+						"settings":
+						{
+							"auto_name": "test",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1220.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 31832,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<form id=\"Baco\" action=\"CSPSAHours.asp?Action=0\" m",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
 			]
 		}
 	],

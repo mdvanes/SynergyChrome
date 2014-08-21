@@ -8,8 +8,8 @@
 
 ## What doesn't work (yet)
 
+* automatic loading of this script after a load (bind to topframe and watch change of subframe? even polling could work)
 * saving or submitting hours
-* automatic loading of this script after a load
 * when clicking on "Uur/Artikel", auto append PRUUR
 * anything else...
 
