@@ -2,6 +2,7 @@ var synergyChromeBookmarklet = {};
 
 synergyChromeBookmarklet.subframe = parent.em_main;
 
+// Inject jQuery
 (function() {
     var fr = null;
 
@@ -20,54 +21,19 @@ synergyChromeBookmarklet.subframe = parent.em_main;
     init();
 })();
 
-// Wait until jquery loaded
+// Wait until jQuery loaded
 synergyChromeBookmarklet.loaderInterval = setInterval(function() {
-    // jquery done loading in this subframe
+    // jQuery done loading in this subframe
     if(typeof synergyChromeBookmarklet.subframe.jQuery !== 'undefined') {
         // Stop the interval loop
         window.clearInterval(synergyChromeBookmarklet.loaderInterval);
-//        synergyChromeBookmarklet.coreInit();
-
-        (function($){
-            var fr = null;
-
-            function bindButtons() {
-                $('#btnStartDatePrev', fr).click(function() {
-                    var startDatePrevious = $('#StartDatePrev', fr).val();
-                    $('#StartDate', fr).val(startDatePrevious);
-                });
-
-                $('#btnStartDateNext', fr).click(function() {
-                    var startDateNext = $('#StartDateNext', fr).val();
-                    $('#StartDate', fr).val(startDateNext);
-                });
-            }
-
-            function init() {
-                // Test jquery version
-                // jQuery.fn.jquery;
-
-                $('#wait', fr).css('opacity','0.7');
-
-                bindButtons();
-
-                setTimeout(function() {
-                    $('#wait', fr).hide();
-                }, 200);
-            }
-
-            $(document).ready(function() {
-                fr = parent.em_main.document;
-                init();
-            });
-
-        })(synergyChromeBookmarklet.subframe.jQuery);
-
-
+        // Initialize the bookmarklet
+        synergyChromeBookmarklet.bookmarkletInit();
     }
 }, 100);
 
-synergyChromeBookmarklet.coreInit = function() {
+// Bookmarklet
+synergyChromeBookmarklet.bookmarkletInit = function() {
     (function($){
         var fr = null;
 
@@ -101,46 +67,5 @@ synergyChromeBookmarklet.coreInit = function() {
             init();
         });
 
-    })(jQuery);
+    })(synergyChromeBookmarklet.subframe.jQuery);
 };
-
-
-
-// setTimeout(function() {
-
-//     (function($){
-//         var fr = null;
-
-//         function bindButtons() {
-//             $('#btnStartDatePrev', fr).click(function() {
-//                 var startDatePrevious = $('#StartDatePrev', fr).val();
-//                 $('#StartDate', fr).val(startDatePrevious);
-//             });
-
-//             $('#btnStartDateNext', fr).click(function() {
-//                 var startDateNext = $('#StartDateNext', fr).val();
-//                 $('#StartDate', fr).val(startDateNext);
-//             });
-//         }
-
-//         function init() {
-//             // Test jquery version
-//             // jQuery.fn.jquery;
-
-//             $('#wait', fr).css('opacity','0.7');
-
-//             bindButtons();
-
-//             setTimeout(function() {
-//                 $('#wait', fr).hide();
-//             }, 200);
-//         }
-
-//         $(document).ready(function() {
-//             fr = parent.em_main.document;
-//             init();
-//         });
-
-//     })(jQuery);
-
-// }, 2000);
