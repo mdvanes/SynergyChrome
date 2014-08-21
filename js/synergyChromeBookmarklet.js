@@ -75,29 +75,24 @@ synergyChromeBookmarklet.bookmarkletInit = function() {
         function openSearchWindow() {
             var url = 'https://synergy.everest.nl/Synergy/docs/BacoBrowserSearch.asp?Name=CSPSAResourceProjects&ResultCols=p%2EProjectNr%2Cp%2EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate%20BETWEEN%20{d%20%272014-08-18%27}%20AND%20{d%20%272014-08-24%27})%20OR%20(m.FromDate%20%3C=%20{d%20%272014-08-18%27}%20AND%20ISNULL(m.UntilDate,%20%2722991231%27)%20%3E=%20{d%20%272014-08-18%27}))%20AND%20((p.InitialStartDate%20BETWEEN%20{d%20%272014-08-18%27}%20AND%20{d%20%272014-08-24%27})%20OR%20(p.InitialStartDate%20%3C=%20{d%20%272014-08-18%27}%20AND%20ISNULL(p.InitialEndDate,%20%2722991231%27)%20%3E=%20{d%20%272014-08-18%27}))%20AND%20p.Status%20=%20%27A%27';
             var searchModal = window.open(url, 'searchModal', 'height=520,width=830,x=50,y=0,location=0');
-            var cx = searchModal.document; // context
 
-            $('div.BtnBar', searchModal.document).hide();
-            $('table.Search', searchModal.document).hide();
-
+            // TODO convert to setInterval
             setTimeout(function() {
-                //console.log('cx', cx);
-                //console.log($('body', searchModal.document));
-                console.log($('table.Search', searchModal.document));
-                $('table.Search', searchModal.document).hide();
+                var cx = searchModal.document; // context
 
                 // Hide NYI elements
                 $('div.BtnBar', cx).hide();
                 $('table.Search', cx).hide();
                 $('div#wait', cx).hide();
 
+                // Bind click to all the hour codes
                 $('#BrowseTable td > a', cx).click(function() {
                     alert($(this).text());
+
+                    // close the window
+                    searchModal.close();
                 });
             }, 1000);
-
-            // close the window
-            //searchModal.close();
         }
 
         function init() {
