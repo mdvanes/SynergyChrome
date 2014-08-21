@@ -6,6 +6,15 @@ synergyChromeBookmarklet.subframe = parent.em_main;
 (function() {
     var fr = null;
 
+    function banner() {
+        if(typeof window.console !== 'undefined') {
+            console.info('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n' +
+                'Synergy Chrome Bookmarklet v 0.0.1\n' +
+                'Initializing the awesome!\n' +
+                '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+        }
+    }
+
     function addJQuery() {
         // Inject dependency
         var newScriptTag = fr.createElement('script');
@@ -14,6 +23,7 @@ synergyChromeBookmarklet.subframe = parent.em_main;
     }
 
     function init() {
+        banner();
         fr = synergyChromeBookmarklet.subframe.document;
         addJQuery();
     }
@@ -49,6 +59,23 @@ synergyChromeBookmarklet.bookmarkletInit = function() {
             });
         }
 
+        function bindSearch() {
+            //$('#ProjectNumberFin', fr).keydown(function(ev) {
+            $('#ProjectNumberHour', fr)
+                .removeAttr('onkeydown')
+                .keydown(function(ev) {
+                    ev.stopPropagation();
+                    // keyCode 113 = F2
+                    if(ev.keyCode === 113) {
+                        alert('a');
+                    }
+                });
+        }
+
+        function openSearchWindow() {
+            
+        }
+
         function init() {
             // Test jquery version
             // jQuery.fn.jquery;
@@ -56,6 +83,7 @@ synergyChromeBookmarklet.bookmarkletInit = function() {
             $('#wait', fr).css('opacity','0.7');
 
             bindButtons();
+            bindSearch();
 
             setTimeout(function() {
                 $('#wait', fr).hide();
