@@ -2,21 +2,18 @@
 
 var synergyChromeBookmarklet = {};
 
-// Inject jQuery
+// Prepare bookmarklet
 (function() {
     'use strict';
 
     synergyChromeBookmarklet.subframe = parent.em_main;
 
     function addJQuery(doc) {
-        //console.log('a3');
         // Inject dependency
         var newScriptTag = doc.createElement('script');
         newScriptTag.setAttribute('src', 'https://code.jquery.com/jquery-2.1.1.min.js');
         doc.body.appendChild(newScriptTag);
     }
-
-    //var fr = null;
 
     function banner() {
         if(typeof window.console !== 'undefined') {
@@ -27,40 +24,22 @@ var synergyChromeBookmarklet = {};
         }
     }
 
-    // function addJQuery(doc) {
-    //     // Inject dependency
-    //     var newScriptTag = doc.createElement('script');
-    //     newScriptTag.setAttribute('src', 'https://code.jquery.com/jquery-2.1.1.min.js');
-    //     doc.body.appendChild(newScriptTag);
-    // }
-
     function startLoadingInterval() {
         setInterval(function() {
-            //'use strict';
-
-            //console.info('interval');
-
             // jQuery done loading in this subframe
             if(typeof synergyChromeBookmarklet.subframe.jQuery !== 'undefined') {
                 var $ = synergyChromeBookmarklet.subframe.jQuery;
-                //console.info('a');
                 var fr = synergyChromeBookmarklet.subframe.document;
                 if(!$('body', fr).is('.synergyChromeLoaded')) {
                     $('body', fr).addClass('synergyChromeLoaded');
-                    // Stop the interval loop
-                    //window.clearInterval(synergyChromeBookmarklet.loaderInterval);
+                    console.info('SynergyChrome loaded');
                     // Initialize the bookmarklet
                     synergyChromeBookmarklet.bookmarkletInit();
                 }
-
-                // // Stop the interval loop
-                //window.clearInterval(synergyChromeBookmarklet.loaderInterval);
-                // // Initialize the bookmarklet
-                // synergyChromeBookmarklet.bookmarkletInit();
             } else {
-                console.info('synergyChrome not loaded, try fixing by adding jQuery before next poll');
+                console.info('SynergyChrome not loaded, try fixing by adding jQuery before next poll');
                 // TODO add jQuery on a higher level so it only has to be done once?
-                // add jQuery again
+                // Add jQuery again
                 addJQuery(synergyChromeBookmarklet.subframe.document);
             }
         }, 500);
@@ -68,47 +47,13 @@ var synergyChromeBookmarklet = {};
 
     function init() {
         banner();
-        //fr = synergyChromeBookmarklet.subframe.document;
-        //addJQuery(synergyChromeBookmarklet.subframe.document); 
-        console.log('a1');
         addJQuery(synergyChromeBookmarklet.subframe.document);
-        console.log('a2');
-        //addJQuery(window.document.head);
         synergyChromeBookmarklet.loaderInterval = startLoadingInterval();
     }
 
     init();
 })();
 
-// Wait until jQuery loaded
-// synergyChromeBookmarklet.loaderInterval = setInterval(function() {
-//     'use strict';
-
-//     console.info('interval');
-
-//     // jQuery done loading in this subframe
-//     if(typeof synergyChromeBookmarklet.subframe.jQuery !== 'undefined') {
-//         //var $ = synergyChromeBookmarklet.subframe.jQuery;
-//         console.info('a');
-//         //var fr = synergyChromeBookmarklet.subframe.document;
-//         // if(!$('body', fr).is('.synergyChromeLoaded')) {
-//         //     $('body', fr).addClass('synergyChromeLoaded');
-//         //     // Stop the interval loop
-//         //     //window.clearInterval(synergyChromeBookmarklet.loaderInterval);
-//         //     // Initialize the bookmarklet
-//         //     synergyChromeBookmarklet.bookmarkletInit();
-//         // }
-
-//         // // Stop the interval loop
-//         //window.clearInterval(synergyChromeBookmarklet.loaderInterval);
-//         // // Initialize the bookmarklet
-//         // synergyChromeBookmarklet.bookmarkletInit();
-//     } else {
-//         // TODO add jQuery on a higher level so it only has to be done once?
-//         // add jQuery again
-//         synergyChromeBookmarklet.addJQuery(synergyChromeBookmarklet.subframe.document);
-//     }
-// }, 3000);
 
 // Bookmarklet
 synergyChromeBookmarklet.bookmarkletInit = function() {
@@ -157,7 +102,7 @@ synergyChromeBookmarklet.bookmarkletInit = function() {
             //var encodedUrl = encodeURI(url);
             url = url.replace(/BacoBrowser/g, 'BacoBrowserSearch');
             url = url.replace(/\s/g, '%20');
-            console.info('e url:', url);
+            //console.info('e url:', url);
             return url;
         }
 
