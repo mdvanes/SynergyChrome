@@ -1,30 +1,146 @@
-// Inject dependency
-var newScriptTag = document.createElement('script');
-newScriptTag.setAttribute('src', 'https://code.jquery.com/jquery-2.1.1.min.js');
-document.body.appendChild(newScriptTag);
+var synergyChromeBookmarklet = {};
 
-(function($){
+synergyChromeBookmarklet.subframe = parent.em_main;
 
-})(jQuery);
+(function() {
+    var fr = null;
 
-// Wait until js loaded
-setTimeout(function() {
-    // Test jquery version
-    // jQuery.fn.jquery;
+    function addJQuery() {
+        // Inject dependency
+        var newScriptTag = fr.createElement('script');
+        newScriptTag.setAttribute('src', 'https://code.jquery.com/jquery-2.1.1.min.js');
+        fr.body.appendChild(newScriptTag);
+    }
 
-    $('#wait').css('opacity','0.7');
+    function init() {
+        fr = synergyChromeBookmarklet.subframe.document;
+        addJQuery();
+    }
 
-    $('#btnStartDatePrev').click(function() {
-        var startDatePrevious = $('#StartDatePrev').val();
-        $('#StartDate').val(startDatePrevious);
-    });
+    init();
+})();
 
-    $('#btnStartDateNext').click(function() {
-        var startDateNext = $('#StartDateNext').val();
-        $('#StartDate').val(startDateNext);
-    });
+// Wait until jquery loaded
+synergyChromeBookmarklet.loaderInterval = setInterval(function() {
+    // jquery done loading in this subframe
+    if(typeof synergyChromeBookmarklet.subframe.jQuery !== 'undefined') {
+        // Stop the interval loop
+        window.clearInterval(synergyChromeBookmarklet.loaderInterval);
+//        synergyChromeBookmarklet.coreInit();
 
-    setTimeout(function() {
-        $('#wait').hide();
-    }, 200);
-}, 500);
+        (function($){
+            var fr = null;
+
+            function bindButtons() {
+                $('#btnStartDatePrev', fr).click(function() {
+                    var startDatePrevious = $('#StartDatePrev', fr).val();
+                    $('#StartDate', fr).val(startDatePrevious);
+                });
+
+                $('#btnStartDateNext', fr).click(function() {
+                    var startDateNext = $('#StartDateNext', fr).val();
+                    $('#StartDate', fr).val(startDateNext);
+                });
+            }
+
+            function init() {
+                // Test jquery version
+                // jQuery.fn.jquery;
+
+                $('#wait', fr).css('opacity','0.7');
+
+                bindButtons();
+
+                setTimeout(function() {
+                    $('#wait', fr).hide();
+                }, 200);
+            }
+
+            $(document).ready(function() {
+                fr = parent.em_main.document;
+                init();
+            });
+
+        })(synergyChromeBookmarklet.subframe.jQuery);
+
+
+    }
+}, 100);
+
+synergyChromeBookmarklet.coreInit = function() {
+    (function($){
+        var fr = null;
+
+        function bindButtons() {
+            $('#btnStartDatePrev', fr).click(function() {
+                var startDatePrevious = $('#StartDatePrev', fr).val();
+                $('#StartDate', fr).val(startDatePrevious);
+            });
+
+            $('#btnStartDateNext', fr).click(function() {
+                var startDateNext = $('#StartDateNext', fr).val();
+                $('#StartDate', fr).val(startDateNext);
+            });
+        }
+
+        function init() {
+            // Test jquery version
+            // jQuery.fn.jquery;
+
+            $('#wait', fr).css('opacity','0.7');
+
+            bindButtons();
+
+            setTimeout(function() {
+                $('#wait', fr).hide();
+            }, 200);
+        }
+
+        $(document).ready(function() {
+            fr = parent.em_main.document;
+            init();
+        });
+
+    })(jQuery);
+};
+
+
+
+// setTimeout(function() {
+
+//     (function($){
+//         var fr = null;
+
+//         function bindButtons() {
+//             $('#btnStartDatePrev', fr).click(function() {
+//                 var startDatePrevious = $('#StartDatePrev', fr).val();
+//                 $('#StartDate', fr).val(startDatePrevious);
+//             });
+
+//             $('#btnStartDateNext', fr).click(function() {
+//                 var startDateNext = $('#StartDateNext', fr).val();
+//                 $('#StartDate', fr).val(startDateNext);
+//             });
+//         }
+
+//         function init() {
+//             // Test jquery version
+//             // jQuery.fn.jquery;
+
+//             $('#wait', fr).css('opacity','0.7');
+
+//             bindButtons();
+
+//             setTimeout(function() {
+//                 $('#wait', fr).hide();
+//             }, 200);
+//         }
+
+//         $(document).ready(function() {
+//             fr = parent.em_main.document;
+//             init();
+//         });
+
+//     })(jQuery);
+
+// }, 2000);
