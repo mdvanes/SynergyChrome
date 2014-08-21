@@ -66,22 +66,35 @@ synergyChromeBookmarklet.bookmarkletInit = function() {
                 .keydown(function(ev) {
                     ev.stopPropagation();
                     var $input = $(this);
+                    var url = extractUrl($input.next('script'));
                     // keyCode 113 = F2
                     if(ev.keyCode === 113) {
-                        //var hourCode = 
-                        openSearchWindow($input);
-                        // console.info('hourCode', hourCode);
-                        // $input.val(hourCode);
+                        openSearchWindow(url, $input);
                     }
                 });
         }
 
-        function openSearchWindow($input) {
-            // TODO compute this URL
-            var url = 'https://synergy.everest.nl/Synergy/docs/BacoBrowserSearch.asp?Name=CSPSAResourceProjects&ResultCols=p%2EProjectNr%2Cp%2EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate%20BETWEEN%20{d%20%272014-08-18%27}%20AND%20{d%20%272014-08-24%27})%20OR%20(m.FromDate%20%3C=%20{d%20%272014-08-18%27}%20AND%20ISNULL(m.UntilDate,%20%2722991231%27)%20%3E=%20{d%20%272014-08-18%27}))%20AND%20((p.InitialStartDate%20BETWEEN%20{d%20%272014-08-18%27}%20AND%20{d%20%272014-08-24%27})%20OR%20(p.InitialStartDate%20%3C=%20{d%20%272014-08-18%27}%20AND%20ISNULL(p.InitialEndDate,%20%2722991231%27)%20%3E=%20{d%20%272014-08-18%27}))%20AND%20p.Status%20=%20%27A%27';
-            var searchModal = window.open(url, 'searchModal', 'height=520,width=830,x=50,y=0,location=0');
+        function extractUrl($elem) {
+            var str = $elem.text();
+            var regexp = /window\.showModalDialog\("(.*)",/g;
+            var match, url;
+             
+            while ((match = regexp.exec(str)) !== null) {
+                url = match[1];
+                if (match.index === regexp.lastIndex) {
+                    regexp.lastIndex++;
+                }
+            }
 
-            console.log('a', $('#BrowseTable', searchModal.document).length);
+            //var encodedUrl = encodeURI(url);
+            url = url.replace(/BacoBrowser/g, 'BacoBrowserSearch');
+            url = url.replace(/\s/g, '%20');
+            console.info('e url:', url);
+            return url;
+        }
+
+        function openSearchWindow(url, $input) {
+            var searchModal = window.open(url, 'searchModal', 'height=520,width=830'); //,x=50,y=0,location=0');
 
             var windowLoadedInterval = setInterval(function() {
                 if($('#BrowseTable', searchModal.document).length > 0) {
