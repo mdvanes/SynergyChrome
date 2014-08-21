@@ -1,15 +1,18 @@
+/* jshint camelcase:false */
+
 var synergyChromeBookmarklet = {};
 
 synergyChromeBookmarklet.subframe = parent.em_main;
 
 // Inject jQuery
 (function() {
+    'use strict';
     var fr = null;
 
     function banner() {
         if(typeof window.console !== 'undefined') {
             console.info('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n' +
-                'Synergy Chrome Bookmarklet v 0.0.1\n' +
+                'Synergy Chrome Bookmarklet v [[VERSION]]\n' +
                 'Initializing the awesome!\n' +
                 '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
         }
@@ -33,6 +36,7 @@ synergyChromeBookmarklet.subframe = parent.em_main;
 
 // Wait until jQuery loaded
 synergyChromeBookmarklet.loaderInterval = setInterval(function() {
+    'use strict';
     // jQuery done loading in this subframe
     if(typeof synergyChromeBookmarklet.subframe.jQuery !== 'undefined') {
         // Stop the interval loop
@@ -44,6 +48,7 @@ synergyChromeBookmarklet.loaderInterval = setInterval(function() {
 
 // Bookmarklet
 synergyChromeBookmarklet.bookmarkletInit = function() {
+    'use strict';
     (function($){
         var fr = null;
 
@@ -60,7 +65,6 @@ synergyChromeBookmarklet.bookmarkletInit = function() {
         }
 
         function bindSearch() {
-            //$('#ProjectNumberFin', fr).keydown(function(ev) {
             $('#ProjectNumberHour', fr)
                 .removeAttr('onkeydown')
                 .keydown(function(ev) {
