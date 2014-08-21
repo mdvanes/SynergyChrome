@@ -77,33 +77,36 @@ synergyChromeBookmarklet.bookmarkletInit = function() {
         }
 
         function openSearchWindow($input) {
+            // TODO compute this URL
             var url = 'https://synergy.everest.nl/Synergy/docs/BacoBrowserSearch.asp?Name=CSPSAResourceProjects&ResultCols=p%2EProjectNr%2Cp%2EDescription&Options=1&ParamName=m.res_id&ParamValue=164&Where=((m.FromDate%20BETWEEN%20{d%20%272014-08-18%27}%20AND%20{d%20%272014-08-24%27})%20OR%20(m.FromDate%20%3C=%20{d%20%272014-08-18%27}%20AND%20ISNULL(m.UntilDate,%20%2722991231%27)%20%3E=%20{d%20%272014-08-18%27}))%20AND%20((p.InitialStartDate%20BETWEEN%20{d%20%272014-08-18%27}%20AND%20{d%20%272014-08-24%27})%20OR%20(p.InitialStartDate%20%3C=%20{d%20%272014-08-18%27}%20AND%20ISNULL(p.InitialEndDate,%20%2722991231%27)%20%3E=%20{d%20%272014-08-18%27}))%20AND%20p.Status%20=%20%27A%27';
             var searchModal = window.open(url, 'searchModal', 'height=520,width=830,x=50,y=0,location=0');
 
-            // TODO convert to setInterval
-            setTimeout(function() {
-                var cx = searchModal.document; // context
+            console.log('a', $('#BrowseTable', searchModal.document).length);
 
-                // Hide NYI elements
-                $('div.BtnBar', cx).hide();
-                $('table.Search', cx).hide();
-                $('div#wait', cx).hide();
+            var windowLoadedInterval = setInterval(function() {
+                if($('#BrowseTable', searchModal.document).length > 0) {
+                    // Stop checking if window is loaded
+                    window.clearInterval(windowLoadedInterval);
+                    // Set bindings on window content
+                    var cx = searchModal.document; // context
 
-                // Bind click to all the hour codes
-                $('#BrowseTable td > a', cx).click(function() {
-                    var hourCode = $(this).text();
-                    //alert($(this).text());
+                    // Hide NYI elements
+                    $('div.BtnBar', cx).hide();
+                    $('table.Search', cx).hide();
+                    $('div#wait', cx).hide();
 
-                    // Set the hourCode in the field that opened the searchWindow
-                    $input.val(hourCode);
+                    // Bind click to all the hour codes
+                    $('#BrowseTable td > a', cx).click(function() {
+                        var hourCode = $(this).text();
 
-                    // Close the window
-                    searchModal.close();
+                        // Set the hourCode in the field that opened the searchWindow
+                        $input.val(hourCode);
 
-                    // Return the value
-                    //return $(this).text();
-                });
-            }, 1000);
+                        // Close the window
+                        searchModal.close();
+                    });
+                }
+            }, 100);
         }
 
         function init() {
