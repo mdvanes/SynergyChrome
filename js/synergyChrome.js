@@ -158,14 +158,18 @@ synergyChrome.bookmarkletInit = function() {
         }
 
         function restyleHeader() {
-            $('.Sidebar', parent.em_header.document)
-                .css({
-                    'background': '#ba0064',
-                    'color': '#fff',
-                    'font-size': '17px'
-                })
-                .append('<b>SynergyChrome v [[VERSION]]</b>');
-            parent.document.getElementsByTagName('frameset')[0].rows='25,*';
+            var frameset = parent.document.getElementsByTagName('frameset')[0];
+            // Prevent running multiple times
+            if(frameset.rows !== '25,*') {
+                $('.Sidebar', parent.em_header.document)
+                    .css({
+                        'background': '#ba0064',
+                        'color': '#fff',
+                        'font-size': '17px'
+                    })
+                    .append('<b>SynergyChrome v [[VERSION]]</b>');
+                frameset.rows='25,*';
+            }
         }
 
         function extractUrl($elem) {
