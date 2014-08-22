@@ -6,6 +6,7 @@
 * previous button
 * next button
 * search for hour code (the infamous F2)
+* in search window: entire row clickable
 * table on main window narrower
 * provide debug info by typing in console: synergyChrome.info
 * when focussing on "Uur/Artikel", prefill PRUUR
@@ -15,7 +16,6 @@
 
 * submitting hours
 * improve the jquery detection: it is now possible to have jquery injected several times. Before injecting, test if it already exists (in addJquery)
-* in search window: entire row clickable
 * enable keyboard shortcut: S (save hours)
 * anything else...
 
