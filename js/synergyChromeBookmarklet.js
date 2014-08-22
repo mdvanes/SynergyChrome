@@ -62,11 +62,30 @@ synergyChromeBookmarklet.bookmarkletInit = function() {
         var fr = null;
 
         function bindButtons() {
+            // Save button
+            //&button1=
+            $('#btnSave', fr).click(function() {
+                //console.log($('form#Baco', fr).attr('action'));
+                //$('form#Baco', fr).attr('action');
+                var oldAction = $('form#Baco', fr).attr('action');
+                // "foo0".substring(0, "foo0".length - 1) + "1"
+                // Replace last character "0" by "1"
+                var newAction = oldAction.substring(0, oldAction.length - 1) + '1';
+
+                // Modify action to 1
+                $('form#Baco', fr).attr('action', newAction);
+
+                // Add button1=
+                $('#ProjectNumberFin', fr).before('<input name="button1"/>');
+            });
+
+            // Previous Week button
             $('#btnStartDatePrev', fr).click(function() {
                 var startDatePrevious = $('#StartDatePrev', fr).val();
                 $('#StartDate', fr).val(startDatePrevious);
             });
 
+            // Next Week button
             $('#btnStartDateNext', fr).click(function() {
                 var startDateNext = $('#StartDateNext', fr).val();
                 $('#StartDate', fr).val(startDateNext);
