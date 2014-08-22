@@ -192,15 +192,34 @@ synergyChrome.bookmarkletInit = function() {
                     $('div#wait', cx).hide();
 
                     // Bind click to all the hour codes
-                    $('#BrowseTable td > a', cx).click(function() {
-                        var hourCode = $(this).text();
+                    // $('#BrowseTable td > a', cx).click(function() {
+                    //     var hourCode = $(this).text();
 
-                        // Set the hourCode in the field that opened the searchWindow
-                        $input.val(hourCode);
+                    //     // Set the hourCode in the field that opened the searchWindow
+                    //     $input.val(hourCode);
 
-                        // Close the window
-                        searchModal.close();
-                    });
+                    //     // Close the window
+                    //     searchModal.close();
+                    // });
+                    // Bind behavior to table rows
+                    $('#BrowseTable tr', cx)
+                        .mouseover(function() {
+                            $(this)
+                                .data('old-background', $(this).css('background') )
+                                .css('background', '#ccc');
+                        })
+                        .mouseout(function() {
+                            $(this).css('background', $(this).data('old-background'));
+                        })
+                        .click(function() {
+                            var hourCode = $(this).find('td:first-child > a').text();
+
+                            // Set the hourCode in the field that opened the searchWindow
+                            $input.val(hourCode);
+
+                            // Close the window
+                            searchModal.close();
+                        });
                 }
             }, 100);
         }
