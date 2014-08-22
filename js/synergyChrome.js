@@ -150,6 +150,13 @@ synergyChrome.bookmarkletInit = function() {
                 });
         }
 
+        function restyleMainTable() {
+            $('.Grid', fr)
+                .css('margin-right', '7px')
+                .removeAttr('width');
+            $('.Grid', fr).find('colgroup > col').removeAttr('width');
+        }
+
         function extractUrl($elem) {
             var str = $elem.text();
             var regexp = /window\.showModalDialog\("(.*)",/g;
@@ -208,6 +215,7 @@ synergyChrome.bookmarkletInit = function() {
             bindSearch();
             bindItemCode();
             removeValidateNumber();
+            restyleMainTable();
 
             setTimeout(function() {
                 $('#wait', fr).hide();
