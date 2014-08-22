@@ -141,6 +141,15 @@ synergyChrome.bookmarkletInit = function() {
                 .removeAttr('onkeypress');
         }
 
+        // Automatically prefill ItemCodeHour with PRUUR on focus
+        function bindItemCode() {
+            $('#ItemCodeHour', fr)
+                .removeAttr('onkeydown')
+                .focus(function() {
+                    $(this).val('PRUUR');
+                });
+        }
+
         function extractUrl($elem) {
             var str = $elem.text();
             var regexp = /window\.showModalDialog\("(.*)",/g;
@@ -197,6 +206,7 @@ synergyChrome.bookmarkletInit = function() {
 
             bindButtons();
             bindSearch();
+            bindItemCode();
             removeValidateNumber();
 
             setTimeout(function() {

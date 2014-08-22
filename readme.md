@@ -2,11 +2,12 @@
 
 ## What will work
 
-* provide debug info by typing in console: synergyChrome.info
 * saving hours
 * previous button
 * next button
 * search for hour code (the infamous F2)
+* provide debug info by typing in console: synergyChrome.info
+* when focussing on "Uur/Artikel", prefill PRUUR
 * automatic loading of this script after a load
 
 ## What doesn't work (yet)
