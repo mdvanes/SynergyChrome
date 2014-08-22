@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'), // read package.json to expose it variables under pkg
         watch: {
             script: {
-                files: ['js/synergyChromeBookmarklet.js'],
+                files: ['js/*.js'],
                 tasks: ['build'],
             },
         },
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
                     // beautify: true, // for debugging
                 },
                 files: {
-                    'synergyChromeBookmarklet.min.js': ['js/synergyChromeBookmarklet.js']
+                    'synergyChromeBookmarklet.min.js': ['js/*.js']
                 }
             }
         },
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
                 jshintrc: '.jshintrc',
             },
             all: [
-                'js/synergyChromeBookmarklet.js'
+                'js/*.js'
             ]
         },
 

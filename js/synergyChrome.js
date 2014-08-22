@@ -1,13 +1,25 @@
 /* jshint camelcase:false */
 
-var synergyChromeBookmarklet = {};
+var synergyChrome = {};
 
 // Prepare bookmarklet
 (function() {
     'use strict';
 
-    synergyChromeBookmarklet.subframe = parent.em_main;
+    /* public funtions and variables */
+    synergyChrome.subframe = parent.em_main;
 
+    synergyChrome.info = function() {
+        banner();
+        if(typeof window.console !== 'undefined') {
+            console.info(
+                '    - isJqueryLoaded = ' + isJqueryLoaded() + '\n' +
+                '    - isBookmarkletLoaded = ' + isBookmarkletLoaded() + '\n' +
+                '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+        }
+    };
+
+    /* private functions */
     function addJQuery(doc) {
         // Inject dependency
         var newScriptTag = doc.createElement('script');
@@ -24,31 +36,49 @@ var synergyChromeBookmarklet = {};
         }
     }
 
+    function isJqueryLoaded() {
+        return (typeof synergyChrome.subframe.jQuery !== 'undefined');
+    }
+
+    function isBookmarkletLoaded() {
+        if(isJqueryLoaded()) {
+            var $ = synergyChrome.subframe.jQuery;
+            var fr = synergyChrome.subframe.document;
+            return $('body', fr).is('.synergyChromeLoaded'); //$('body', fr).is('.synergyChromeLoaded')) {
+        } else {
+            return false;
+        }
+        // return isJqueryLoaded() &&
+        //     $('body', context).is('.synergyChromeLoaded');
+    }
+
     function startLoadingInterval() {
         setInterval(function() {
             // jQuery done loading in this subframe
-            if(typeof synergyChromeBookmarklet.subframe.jQuery !== 'undefined') {
-                var $ = synergyChromeBookmarklet.subframe.jQuery;
-                var fr = synergyChromeBookmarklet.subframe.document;
-                if(!$('body', fr).is('.synergyChromeLoaded')) {
+            if(isJqueryLoaded()) { //typeof synergyChrome.subframe.jQuery !== 'undefined') {
+                // var $ = synergyChrome.subframe.jQuery;
+                // var fr = synergyChrome.subframe.document;
+                if( !isBookmarkletLoaded() ) { //$('body', fr).is('.synergyChromeLoaded')) {
+                    var $ = synergyChrome.subframe.jQuery;
+                    var fr = synergyChrome.subframe.document;
                     $('body', fr).addClass('synergyChromeLoaded');
                     console.info('SynergyChrome loaded');
                     // Initialize the bookmarklet
-                    synergyChromeBookmarklet.bookmarkletInit();
+                    synergyChrome.bookmarkletInit();
                 }
             } else {
                 console.info('SynergyChrome not loaded, try fixing by adding jQuery before next poll');
                 // TODO add jQuery on a higher level so it only has to be done once?
                 // Add jQuery again
-                addJQuery(synergyChromeBookmarklet.subframe.document);
+                addJQuery(synergyChrome.subframe.document);
             }
         }, 500);
     }
 
     function init() {
         banner();
-        addJQuery(synergyChromeBookmarklet.subframe.document);
-        synergyChromeBookmarklet.loaderInterval = startLoadingInterval();
+        addJQuery(synergyChrome.subframe.document);
+        synergyChrome.loaderInterval = startLoadingInterval();
     }
 
     init();
@@ -56,7 +86,7 @@ var synergyChromeBookmarklet = {};
 
 
 // Bookmarklet
-synergyChromeBookmarklet.bookmarkletInit = function() {
+synergyChrome.bookmarkletInit = function() {
     'use strict';
     (function($){
         var fr = null;
@@ -165,9 +195,9 @@ synergyChromeBookmarklet.bookmarkletInit = function() {
         }
 
         $(document).ready(function() {
-            fr = synergyChromeBookmarklet.subframe.document;
+            fr = synergyChrome.subframe.document;
             init();
         });
 
-    })(synergyChromeBookmarklet.subframe.jQuery);
+    })(synergyChrome.subframe.jQuery);
 };
