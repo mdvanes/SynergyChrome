@@ -5,12 +5,15 @@
 * previous button
 * next button
 * search for hour code (the infamous F2)
+* automatic loading of this script after a load
 
 ## What doesn't work (yet)
 
-* automatic loading of this script after a load (bind to topframe and watch change of subframe? even polling could work)
 * saving or submitting hours
-* when clicking on "Uur/Artikel", auto append PRUUR
+* when clicking on "Uur/Artikel", auto append PRUUR (and remove Uncaught ReferenceError: SelectItemCodeHour_keydown is not defined )
+* some way to retrieve debugging info: type in console: synergyChrome.info; (Rename synergyChromeBookmarklet namespace to synergyChrome)
+* improve the jquery detection: it is now possible to have jquery injected several times. Before injecting, test if it already exists (in addJquery)
+* on entering number: BacoValidateNumber is not defined 
 * anything else...
 
 # HOWTO
