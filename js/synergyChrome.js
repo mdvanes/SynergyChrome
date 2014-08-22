@@ -191,16 +191,6 @@ synergyChrome.bookmarkletInit = function() {
                     $('table.Search', cx).hide();
                     $('div#wait', cx).hide();
 
-                    // Bind click to all the hour codes
-                    // $('#BrowseTable td > a', cx).click(function() {
-                    //     var hourCode = $(this).text();
-
-                    //     // Set the hourCode in the field that opened the searchWindow
-                    //     $input.val(hourCode);
-
-                    //     // Close the window
-                    //     searchModal.close();
-                    // });
                     // Bind behavior to table rows
                     $('#BrowseTable tr', cx)
                         .mouseover(function() {
