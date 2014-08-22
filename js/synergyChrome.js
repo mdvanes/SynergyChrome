@@ -95,15 +95,29 @@ synergyChrome.bookmarkletInit = function() {
     (function($){
         var fr = null;
 
+        function setActionCode(code) {
+            // Replace last character "0" by "code"
+            var oldAction = $('form#Baco', fr).attr('action');
+            var newAction = oldAction.substring(0, oldAction.length - 1) + code;
+
+            // Update form action
+            $('form#Baco', fr).attr('action', newAction);
+        }
+
         function bindButtons() {
             // Save button
             $('#btnSave', fr).click(function() {
-                // Replace last character "0" by "1"
-                var oldAction = $('form#Baco', fr).attr('action');
-                var newAction = oldAction.substring(0, oldAction.length - 1) + '1';
+                // Set form action code to 1
+                setActionCode('1');
 
-                // Modify action to 1
-                $('form#Baco', fr).attr('action', newAction);
+                // Add button1=
+                $('#ProjectNumberFin', fr).before('<input name="button1"/>');
+            });
+
+            // Submit button
+            $('#btnInDien', fr).click(function() {
+                // Set form action code to 1
+                setActionCode('2');
 
                 // Add button1=
                 $('#ProjectNumberFin', fr).before('<input name="button1"/>');
