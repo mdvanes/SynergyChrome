@@ -44,25 +44,29 @@ var synergyChrome = {};
         if(isJqueryLoaded()) {
             var $ = synergyChrome.subframe.jQuery;
             var fr = synergyChrome.subframe.document;
-            return $('body', fr).is('.synergyChromeLoaded'); //$('body', fr).is('.synergyChromeLoaded')) {
+            return $('body', fr).is('.synergyChromeLoaded');
         } else {
             return false;
         }
-        // return isJqueryLoaded() &&
-        //     $('body', context).is('.synergyChromeLoaded');
+    }
+
+    function markBookmarkletLoaded() {
+        var $ = synergyChrome.subframe.jQuery;
+        var fr = synergyChrome.subframe.document;
+        $('body', fr).addClass('synergyChromeLoaded');
+        console.info('SynergyChrome loaded');
     }
 
     function startLoadingInterval() {
         setInterval(function() {
             // jQuery done loading in this subframe
-            if(isJqueryLoaded()) { //typeof synergyChrome.subframe.jQuery !== 'undefined') {
-                // var $ = synergyChrome.subframe.jQuery;
-                // var fr = synergyChrome.subframe.document;
-                if( !isBookmarkletLoaded() ) { //$('body', fr).is('.synergyChromeLoaded')) {
-                    var $ = synergyChrome.subframe.jQuery;
-                    var fr = synergyChrome.subframe.document;
-                    $('body', fr).addClass('synergyChromeLoaded');
-                    console.info('SynergyChrome loaded');
+            if(isJqueryLoaded()) {
+                if( !isBookmarkletLoaded() ) {
+                    // var $ = synergyChrome.subframe.jQuery;
+                    // var fr = synergyChrome.subframe.document;
+                    // $('body', fr).addClass('synergyChromeLoaded');
+                    // console.info('SynergyChrome loaded');
+                    markBookmarkletLoaded();
                     // Initialize the bookmarklet
                     synergyChrome.bookmarkletInit();
                 }
@@ -132,6 +136,11 @@ synergyChrome.bookmarkletInit = function() {
                 });
         }
 
+        function removeValidateNumber() {
+            $('input[name="ItemCountHour"]', fr)
+                .removeAttr('onkeypress');
+        }
+
         function extractUrl($elem) {
             var str = $elem.text();
             var regexp = /window\.showModalDialog\("(.*)",/g;
@@ -188,6 +197,7 @@ synergyChrome.bookmarkletInit = function() {
 
             bindButtons();
             bindSearch();
+            removeValidateNumber();
 
             setTimeout(function() {
                 $('#wait', fr).hide();
