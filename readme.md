@@ -2,6 +2,8 @@
 
 ## What will work
 
+* provide debug info by typing in console: synergyChrome.info
+* saving hours
 * previous button
 * next button
 * search for hour code (the infamous F2)
@@ -9,11 +11,14 @@
 
 ## What doesn't work (yet)
 
-* saving or submitting hours
+* submitting hours
 * when clicking on "Uur/Artikel", auto append PRUUR (and remove Uncaught ReferenceError: SelectItemCodeHour_keydown is not defined )
-* some way to retrieve debugging info: type in console: synergyChrome.info; (Rename synergyChromeBookmarklet namespace to synergyChrome)
 * improve the jquery detection: it is now possible to have jquery injected several times. Before injecting, test if it already exists (in addJquery)
-* on entering number: BacoValidateNumber is not defined 
+* on entering number: BacoValidateNumber is not defined : 
+    Function BacoValidateNumber(key, bNegative)
+        BacoValidateNumber = key <= 31 Or (key >= Asc("0") And key <= Asc("9")) Or key = Asc(".") Or key = Asc(",")
+        If bNegative And Not BacoValidateNumber Then BacoValidateNumber = key = Asc("-")
+    End Function
 * anything else...
 
 # HOWTO
