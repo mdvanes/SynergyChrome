@@ -157,6 +157,16 @@ synergyChrome.bookmarkletInit = function() {
             $('.Grid', fr).find('colgroup > col').removeAttr('width');
         }
 
+        function restyleHeader() {
+            //synergyChrome.subframe.$('.Sidebar', parent.em_header.document).css('background','#ba0064');
+            $('.Sidebar', parent.em_header.document)
+                .css('background','#ba0064')
+                .css('color', '#fff')
+                .css('font-size', '17px')
+                .append('<b>SynergyChrome v [[VERSION]]</b>');
+            parent.document.getElementsByTagName('frameset')[0].rows='25,*';
+        }
+
         function extractUrl($elem) {
             var str = $elem.text();
             var regexp = /window\.showModalDialog\("(.*)",/g;
@@ -225,6 +235,7 @@ synergyChrome.bookmarkletInit = function() {
             bindItemCode();
             removeValidateNumber();
             restyleMainTable();
+            restyleHeader();
 
             setTimeout(function() {
                 $('#wait', fr).hide();
