@@ -158,11 +158,12 @@ synergyChrome.bookmarkletInit = function() {
         }
 
         function restyleHeader() {
-            //synergyChrome.subframe.$('.Sidebar', parent.em_header.document).css('background','#ba0064');
             $('.Sidebar', parent.em_header.document)
-                .css('background','#ba0064')
-                .css('color', '#fff')
-                .css('font-size', '17px')
+                .css({
+                    'background': '#ba0064',
+                    'color': '#fff',
+                    'font-size': '17px'
+                })
                 .append('<b>SynergyChrome v [[VERSION]]</b>');
             parent.document.getElementsByTagName('frameset')[0].rows='25,*';
         }
