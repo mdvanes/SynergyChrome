@@ -13,7 +13,6 @@
 ## What doesn't work (yet)
 
 * submitting hours
-* when clicking on "Uur/Artikel", auto append PRUUR (and remove Uncaught ReferenceError: SelectItemCodeHour_keydown is not defined )
 * improve the jquery detection: it is now possible to have jquery injected several times. Before injecting, test if it already exists (in addJquery)
 * anything else...
 
