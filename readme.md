@@ -17,6 +17,7 @@
 * submitting hours
 * improve the jquery detection: it is now possible to have jquery injected several times. Before injecting, test if it already exists (in addJquery)
 * enable keyboard shortcut: S (save hours)
+* before running, detect if synergy is open
 * anything else...
 
 # HOWTO
