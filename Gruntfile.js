@@ -19,10 +19,10 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 options: {
-                    banner:  '/*! <%= pkg.name %> by <%= pkg.author %> - v<%= pkg.version %> - ' +
-                        '<%= grunt.template.today("yyyy-mm-dd") %> */\n' +
-                        'javascript:(function(){',
-                    footer: '})();',
+                    banner: 'javascript:(function(){',
+                    footer: '})();\n' +
+                        '/*! <%= pkg.name %> by <%= pkg.author %> - v<%= pkg.version %> - ' +
+                        '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
                     // beautify: true, // for debugging
                 },
                 files: {
