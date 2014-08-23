@@ -28,37 +28,50 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h1>
+<a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>The VBS version of the webapplication Synergy only works on IE 8 natively, or IE &gt; 8 with manually modifying the compatibility settings.
+This bookmarklet supplies some basic functionality in Chrome (tested) and probably Safari and Firefox too (untested).</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<p>Just startup Synergy and run the bookmarklet.</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<h1>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<ol>
+<li>I will assume you use Chrome (tested with 36) for all steps</li>
+<li>make a bookmark of this link: the bookmarklet (v 0.9.3)+"\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")},g()}(),synergyChrome.bookmarkletInit=function(){"use strict";!function(a){function b(b){var c=a("form#Baco",l).attr("action"),d=c.substring(0,c.length-1)+b;a("form#Baco",l).attr("action",d)}function c(){a("#btnSave",l).click(function(){b("1"),a("#ProjectNumberFin",l).before('')}),a("#btnInDien",l).click(function(){b("2"),a("#ProjectNumberFin",l).before('')}),a("#btnStartDatePrev",l).click(function(){var b=a("#StartDatePrev",l).val();a("#StartDate",l).val(b)}),a("#btnStartDateNext",l).click(function(){var b=a("#StartDateNext",l).val();a("#StartDate",l).val(b)})}function d(){a("#ProjectNumberHour",l).removeAttr("onkeydown").keydown(function(b){b.stopPropagation();var c=a(this),d=i(c.next("script"));113===b.keyCode&amp;&amp;j(d,c)})}function e(){a('input[name="ItemCountHour"]',l).removeAttr("onkeypress")}function f(){a("#ItemCodeHour",l).removeAttr("onkeydown").focus(function(){a(this).val("PRUUR")})}function g(){a(".Grid",l).css("margin-right","7px").removeAttr("width"),a(".Grid",l).find("colgroup &gt; col").removeAttr("width")}function h(){var b=parent.document.getElementsByTagName("frameset")[0];"25,<em>"!==b.rows&amp;&amp;(a(".Sidebar",parent.em_header.document).css({background:"#ba0064",color:"#fff","font-size":"17px"}).append("<b>SynergyChrome v 0.9.3</b>"),b.rows="25,</em>")}function i(a){for(var b,c,d=a.text(),e=/window.showModalDialog("(.*)",/g;null!==(b=e.exec(d));)c=b[1],b.index===e.lastIndex&amp;&amp;e.lastIndex++;return c=c.replace(/BacoBrowser/g,"BacoBrowserSearch"),c=c.replace(/\s/g,"%20")}function j(b,c){var d=window.open(b,"searchModal","height=520,width=830"),e=setInterval(function(){if(a("#BrowseTable",d.document).length&gt;0){window.clearInterval(e);var b=d.document;a("div.BtnBar",b).hide(),a("table.Search",b).hide(),a("div#wait",b).hide(),a("#BrowseTable tr",b).mouseover(function(){a(this).data("old-background",a(this).css("background")).css("background","#ccc")}).mouseout(function(){a(this).css("background",a(this).data("old-background"))}).click(function(){var b=a(this).find("td:first-child &gt; a").text();c.val(b),d.close()})}},100)}function k(){a("#wait",l).css("opacity","0.7"),c(),d(),f(),e(),g(),h(),setTimeout(function(){a("#wait",l).hide()},200)}var l=null;a(document).ready(function(){l=synergyChrome.subframe.document,k()})}(synergyChrome.subframe.jQuery)};})();) (right-click, Bookmark this link)</li>
+<li>log into Synergy</li>
+<li>go to Mijn realisaties &gt; wekelijks. This will give a loading screen that doesn't disappear.</li>
+<li>click the bookmark, changes should be visible immediately.</li>
+</ol><h1>
+<a name="status" class="anchor" href="#status"><span class="octicon octicon-link"></span></a>Status</h1>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<h2>
+<a name="what-will-work" class="anchor" href="#what-will-work"><span class="octicon octicon-link"></span></a>What will work</h2>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<ul>
+<li>submitting hours (untested)</li>
+<li>saving hours</li>
+<li>previous button</li>
+<li>next button</li>
+<li>search for hour code (the infamous F2)</li>
+<li>in search window: entire row clickable</li>
+<li>table on main window narrower</li>
+<li>provide debug info by typing in console: synergyChrome.info</li>
+<li>when focussing on "Uur/Artikel", prefill PRUUR</li>
+<li>automatic loading of this script after a load</li>
+</ul><h2>
+<a name="what-doesnt-work-yet" class="anchor" href="#what-doesnt-work-yet"><span class="octicon octicon-link"></span></a>What doesn't work (yet)</h2>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<ul>
+<li>test submitting hours</li>
+<li>improve the jquery detection: it is now possible to have jquery injected several times. Before injecting, test if it already exists (in addJquery)</li>
+<li>enable keyboard shortcut: S (save hours)</li>
+<li>before running, detect if synergy is open</li>
+<li>anything else...</li>
+</ul>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/mdvanes">mdvanes</a></p>
