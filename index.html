@@ -11,6 +11,14 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <style>
+.bookmarklet {
+  font-size: 200%;
+}
+.bookmarklet:hover {
+  background-color: black;
+}
+    </style>
   </head>
   <body>
     <div class="wrapper">
@@ -40,38 +48,31 @@ This bookmarklet supplies some basic functionality in Chrome (tested) and probab
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
 
 <ol>
-<li>I will assume you use Chrome (tested with 36) for all steps</li>
-<li>make a bookmark of this link: <a href="">the bookmarklet (v 0.9.3)</a> (right-click, Bookmark this link)</li>
-<li>log into Synergy</li>
-<li>go to Mijn realisaties &gt; wekelijks. This will give a loading screen that doesn't disappear.</li>
-<li>click the bookmark, changes should be visible immediately.</li>
+  <li>I will assume you use Chrome (tested with 36) for all steps</li>
+  <!-- <li>
+    make a bookmark of this link:<br/> 
+    <a href="" class="bookmarklet">the&nbsp;bookmarklet&nbsp;(v&nbsp;0.9.3)</a> <br/>
+    (right-click, Bookmark this link)
+  </li> -->
+  <li>creating the bookmark is not completely done, but I'm working on it. The current workaround is:
+    <ol>
+      <li>create a bookmark to something (e.g. www.google.com) in Chrome</li>
+      <li>right-click the bookmark and choose edit</li>
+      <li>change the name to SynergyChrome</li>
+      <li>remove the URL</li>
+      <li>copy the contents of <a href="https://raw.githubusercontent.com/mdvanes/SynergyChrome/master/synergyChromeBookmarklet.min.js">this file</a></li>
+      <li>paste it as the URL</li>
+      <li>save the bookmark</li>
+    </ol>
+  </li>
+  <li>log into Synergy</li>
+  <li>go to Mijn realisaties &gt; wekelijks. This will give a loading screen that doesn't disappear.</li>
+  <li>click the bookmark, changes should be visible immediately.</li>
 </ol><h1>
 <a name="status" class="anchor" href="#status"><span class="octicon octicon-link"></span></a>Status</h1>
 
-<h2>
-<a name="what-will-work" class="anchor" href="#what-will-work"><span class="octicon octicon-link"></span></a>What will work</h2>
+<p>For more information, e.g. what will work at this time and what won't work, see the GitHub page at <a href="https://github.com/mdvanes/SynergyChrome">https://github.com/mdvanes/SynergyChrome</a>.</p>
 
-<ul>
-<li>submitting hours (untested)</li>
-<li>saving hours</li>
-<li>previous button</li>
-<li>next button</li>
-<li>search for hour code (the infamous F2)</li>
-<li>in search window: entire row clickable</li>
-<li>table on main window narrower</li>
-<li>provide debug info by typing in console: synergyChrome.info</li>
-<li>when focussing on "Uur/Artikel", prefill PRUUR</li>
-<li>automatic loading of this script after a load</li>
-</ul><h2>
-<a name="what-doesnt-work-yet" class="anchor" href="#what-doesnt-work-yet"><span class="octicon octicon-link"></span></a>What doesn't work (yet)</h2>
-
-<ul>
-<li>test submitting hours</li>
-<li>improve the jquery detection: it is now possible to have jquery injected several times. Before injecting, test if it already exists (in addJquery)</li>
-<li>enable keyboard shortcut: S (save hours)</li>
-<li>before running, detect if synergy is open</li>
-<li>anything else...</li>
-</ul>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/mdvanes">mdvanes</a></p>
