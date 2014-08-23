@@ -1,4 +1,23 @@
-# STATUS
+# Description
+
+The VBS version of the webapplication Synergy only works on IE 8 natively, or IE > 8 with manually modifying the compatibility settings.
+This bookmarklet supplies some basic functionality in Chrome (tested) and probably Safari and Firefox too (untested).
+
+Just startup Synergy and run the bookmarklet.
+
+
+# Installation
+
+* log into synergy with Chrome (tested with 36)
+* go to Mijn realisaties > wekelijks
+* open debug console
+* leave focus on <top frame> (this is the default)
+* copy-paste the content of synergyChromeBookmarklet.js into the debug console and press enter
+* repeat after each page load
+* make a new bookmark in Chrome (e.g. to Google), edit and replace the url by the content of synergyChromeBookmarklet.min.js
+
+
+# Status
 
 ## What will work
 
@@ -21,13 +40,3 @@
 * before running, detect if synergy is open
 * anything else...
 
-# HOWTO
-
-* log into synergy with Chrome (tested with 36)
-* go to Mijn realisaties > wekelijks
-* open debug console
-* leave focus on <top frame> (this is the default)
-* copy-paste the content of synergyChromeBookmarklet.js into the debug console and press enter
-* repeat after each page load
-
-* make a new bookmark in Chrome (e.g. to Google), edit and replace the url by the content of synergyChromeBookmarklet.min.js
