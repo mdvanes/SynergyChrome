@@ -32,6 +32,7 @@ Just startup Synergy and run the bookmarklet.
 
 ## What doesn't work (yet)
 
+* compile to escaped bookmarklet: https://www.npmjs.org/package/bookmarklet
 * test submitting hours
 * improve the jquery detection: it is now possible to have jquery injected several times. Before injecting, test if it already exists (in addJquery)
 * enable keyboard shortcut: S (save hours)
