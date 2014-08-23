@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Synergychrome by mdvanes</title>
+    <title>SynergyChrome by mdvanes</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -15,8 +15,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Synergychrome</h1>
-        <p>Bookmarklets that gives Synergy basic support to Chrome.</p>
+        <h1>SynergyChrome</h1>
+        <p>Bookmarklets that gives Synergy basic support for Chrome.</p>
 
         <p class="view"><a href="https://github.com/mdvanes/SynergyChrome">View the Project on GitHub <small>mdvanes/SynergyChrome</small></a></p>
 
@@ -41,7 +41,7 @@ This bookmarklet supplies some basic functionality in Chrome (tested) and probab
 
 <ol>
 <li>I will assume you use Chrome (tested with 36) for all steps</li>
-<li>make a bookmark of this link: the bookmarklet (v 0.9.3)+"\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")},g()}(),synergyChrome.bookmarkletInit=function(){"use strict";!function(a){function b(b){var c=a("form#Baco",l).attr("action"),d=c.substring(0,c.length-1)+b;a("form#Baco",l).attr("action",d)}function c(){a("#btnSave",l).click(function(){b("1"),a("#ProjectNumberFin",l).before('')}),a("#btnInDien",l).click(function(){b("2"),a("#ProjectNumberFin",l).before('')}),a("#btnStartDatePrev",l).click(function(){var b=a("#StartDatePrev",l).val();a("#StartDate",l).val(b)}),a("#btnStartDateNext",l).click(function(){var b=a("#StartDateNext",l).val();a("#StartDate",l).val(b)})}function d(){a("#ProjectNumberHour",l).removeAttr("onkeydown").keydown(function(b){b.stopPropagation();var c=a(this),d=i(c.next("script"));113===b.keyCode&amp;&amp;j(d,c)})}function e(){a('input[name="ItemCountHour"]',l).removeAttr("onkeypress")}function f(){a("#ItemCodeHour",l).removeAttr("onkeydown").focus(function(){a(this).val("PRUUR")})}function g(){a(".Grid",l).css("margin-right","7px").removeAttr("width"),a(".Grid",l).find("colgroup &gt; col").removeAttr("width")}function h(){var b=parent.document.getElementsByTagName("frameset")[0];"25,<em>"!==b.rows&amp;&amp;(a(".Sidebar",parent.em_header.document).css({background:"#ba0064",color:"#fff","font-size":"17px"}).append("<b>SynergyChrome v 0.9.3</b>"),b.rows="25,</em>")}function i(a){for(var b,c,d=a.text(),e=/window.showModalDialog("(.*)",/g;null!==(b=e.exec(d));)c=b[1],b.index===e.lastIndex&amp;&amp;e.lastIndex++;return c=c.replace(/BacoBrowser/g,"BacoBrowserSearch"),c=c.replace(/\s/g,"%20")}function j(b,c){var d=window.open(b,"searchModal","height=520,width=830"),e=setInterval(function(){if(a("#BrowseTable",d.document).length&gt;0){window.clearInterval(e);var b=d.document;a("div.BtnBar",b).hide(),a("table.Search",b).hide(),a("div#wait",b).hide(),a("#BrowseTable tr",b).mouseover(function(){a(this).data("old-background",a(this).css("background")).css("background","#ccc")}).mouseout(function(){a(this).css("background",a(this).data("old-background"))}).click(function(){var b=a(this).find("td:first-child &gt; a").text();c.val(b),d.close()})}},100)}function k(){a("#wait",l).css("opacity","0.7"),c(),d(),f(),e(),g(),h(),setTimeout(function(){a("#wait",l).hide()},200)}var l=null;a(document).ready(function(){l=synergyChrome.subframe.document,k()})}(synergyChrome.subframe.jQuery)};})();) (right-click, Bookmark this link)</li>
+<li>make a bookmark of this link: <a href="">the bookmarklet (v 0.9.3)</a> (right-click, Bookmark this link)</li>
 <li>log into Synergy</li>
 <li>go to Mijn realisaties &gt; wekelijks. This will give a loading screen that doesn't disappear.</li>
 <li>click the bookmark, changes should be visible immediately.</li>
