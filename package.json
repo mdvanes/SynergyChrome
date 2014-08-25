@@ -1,11 +1,11 @@
 {
   "name": "SynergyChrome",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Synergy Chrome Bookmarklet",
   "author": "M.D. van Es",
   "repository": {
-    "type": "svn",
-    "url": "http://svn.everest.nl/genericstyle/components/SynergyChrome"
+    "type": "git",
+    "url": "https://github.com/mdvanes/SynergyChrome"
   },
   "license": "Closed",
   "devDependencies": {
@@ -13,7 +13,9 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.5.1",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-execute": "^0.2.2",
     "grunt-replace": "^0.7.8",
+    "grunt-stamp": "^0.1.0",
     "load-grunt-tasks": "^0.6.0",
     "time-grunt": "^0.4.0"
   },
