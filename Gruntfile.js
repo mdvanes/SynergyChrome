@@ -22,7 +22,9 @@ module.exports = function(grunt) {
                     // beautify: true, // for debugging
                 },
                 files: {
-                    '_tmp/synergyChrome-minified.js': ['js/*.js']
+                    '_tmp/synergyChrome-minified.js': [
+                        'js/synergyChrome.js',
+                        'js/exports.js']
                 }
             }
         },
