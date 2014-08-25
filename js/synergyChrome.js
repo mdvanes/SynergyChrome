@@ -31,6 +31,8 @@ var synergyChrome = {};
         if(typeof window.console !== 'undefined') {
             console.info('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n' +
                 'Synergy Chrome Bookmarklet v [[VERSION]]\n' +
+                'by [[AUTHOR]] on [[BUILDDATE]]\n' +
+                'see [[REPO]]\n' +
                 'Initializing the awesome!\n' +
                 '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
         }
@@ -268,3 +270,7 @@ synergyChrome.bookmarkletInit = function() {
 
     })(synergyChrome.subframe.jQuery);
 };
+
+// Export when wrapped in bookmarklet closure
+window.synergyChrome = {};
+window.synergyChrome.info = synergyChrome.info;
