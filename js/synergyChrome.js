@@ -52,6 +52,20 @@ var synergyChrome = {};
         }
     }
 
+    function isSynergy() {
+        // Test for 3 frame names
+        if( typeof parent.em_header === 'object' &&
+            typeof parent.em_main === 'object' &&
+            typeof parent.em_list === 'object') {
+           return true;
+        } else {
+            var message = 'Initialization failed: Synergy needs to be logged in and the active tab.';
+            console.warn(message);
+            alert(message);
+            return false;
+        }
+    }
+
     function markBookmarkletLoaded() {
         var $ = synergyChrome.subframe.jQuery;
         var fr = synergyChrome.subframe.document;
@@ -83,8 +97,10 @@ var synergyChrome = {};
 
     function init() {
         banner();
-        addJQuery(synergyChrome.subframe.document);
-        synergyChrome.loaderInterval = startLoadingInterval();
+        if(isSynergy()) {
+            addJQuery(synergyChrome.subframe.document);
+            synergyChrome.loaderInterval = startLoadingInterval();
+        }
     }
 
     init();
@@ -270,7 +286,3 @@ synergyChrome.bookmarkletInit = function() {
 
     })(synergyChrome.subframe.jQuery);
 };
-
-// Export when wrapped in bookmarklet closure
-window.synergyChrome = {};
-window.synergyChrome.info = synergyChrome.info;
