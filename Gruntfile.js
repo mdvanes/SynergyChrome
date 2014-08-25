@@ -19,14 +19,15 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 options: {
-                    banner: 'javascript:(function(){',
-                    footer: '})();\n' +
-                        '/*! <%= pkg.name %> by <%= pkg.author %> - v<%= pkg.version %> - ' +
-                        '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
+                    // banner: 'javascript:(function(){',
+                    // footer: '})();\n' +
+                    //     '/*! <%= pkg.name %> by <%= pkg.author %> - v<%= pkg.version %> - ' +
+                    //     '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
                     // beautify: true, // for debugging
                 },
                 files: {
-                    'synergyChromeBookmarklet.min.js': ['js/*.js']
+                    //'synergyChromeBookmarklet.min.js': ['js/*.js']
+                    '_tmp/synergyChrome-minified.js': ['js/*.js']
                 }
             }
         },
@@ -52,15 +53,41 @@ module.exports = function(grunt) {
                     ]
                 },
                 files: [
-                    {expand: true, flatten: true, src: ['synergyChromeBookmarklet.min.js'], dest: '.'}
+                    //{expand: true, flatten: true, src: ['synergyChromeBookmarklet.min.js'], dest: '.'}
+                    {expand: true, flatten: true, src: ['_tmp/synergyChrome-minified.js'], dest: '_tmp'}
                 ]
             },
         },
 
+        execute: {
+            urlencode: {
+                options: {
+                    //args: ['_tmp/synergyChrome-minified.js', '_tmp/synergyChrome-encoded.js']
+                    args: ['_tmp/synergyChrome-minified.js', 'synergyChromeBookmarklet.min.js']
+                },
+                src: 'util/urlencode.js'
+            }
+        },
+
+        stamp: {
+            options: {
+                // banner: 'v<%= pkg.version %>',
+                // footer: 'Licensed under the MIT License'
+                banner: 'javascript:(function(){',
+                footer: '})();\n' +
+                    '/*! <%= pkg.name %> by <%= pkg.author %> - v<%= pkg.version %> - ' +
+                    '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
+            },
+            js: {
+                files: { 
+                    src: 'synergyChromeBookmarklet.min.js'
+                }
+            }
+        }
     });
 
     // Tasks
     grunt.registerTask('default', ['watch']);
 
-    grunt.registerTask('build', ['jshint', 'uglify', 'replace:build']);
+    grunt.registerTask('build', ['jshint', 'uglify', 'replace:build', 'execute:urlencode', 'stamp']);
 };

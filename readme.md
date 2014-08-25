@@ -1,6 +1,6 @@
 # Description
 
-The VBS version of the webapplication Synergy only works on IE 8 natively, or IE > 8 with manually modifying the compatibility settings.
+The VBS version of the webapplication Synergy only works on IE 8 natively, or IE > 8 after manually modifying the compatibility settings.
 This bookmarklet supplies some basic functionality in Chrome (tested) and probably Safari and Firefox too (untested).
 
 Just startup Synergy and run the bookmarklet.
@@ -32,10 +32,7 @@ Just startup Synergy and run the bookmarklet.
 
 ## What doesn't work (yet)
 
-* compile to escaped bookmarklet: https://www.npmjs.org/package/bookmarklet
 * test submitting hours
-* improve the jquery detection: it is now possible to have jquery injected several times. Before injecting, test if it already exists (in addJquery)
 * enable keyboard shortcut: S (save hours)
-* before running, detect if synergy is open
 * anything else...
 
