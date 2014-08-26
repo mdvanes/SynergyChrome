@@ -17,13 +17,26 @@ module.exports = function(grunt) {
         },
 
         uglify: {
-            build: {
+            dev: {
                 options: {
-                    // beautify: true, // for debugging
+                    beautify: true, // for debugging
+                    mangle: false,
+                    compress: false,
+                    preserveComments: 'all',
+                    sourceMap: true
                 },
                 files: {
+                    '_tmp/synergyChrome-dev.js': [
+                        'js/psa.js',
+                        'js/prepare.js']
+                    // Do not export variables
+                }
+            },
+            build: {
+                files: {
                     '_tmp/synergyChrome-minified.js': [
-                        'js/synergyChrome.js',
+                        'js/psa.js',
+                        'js/prepare.js',
                         'js/exports.js']
                 }
             }
@@ -94,5 +107,5 @@ module.exports = function(grunt) {
     // Tasks
     grunt.registerTask('default', ['watch']);
 
-    grunt.registerTask('build', ['jshint', 'uglify', 'replace:build', 'execute:urlencode', 'stamp']);
+    grunt.registerTask('build', ['jshint', 'uglify:dev', 'uglify:build', 'replace:build', 'execute:urlencode', 'stamp']);
 };
