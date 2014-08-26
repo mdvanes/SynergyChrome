@@ -19,6 +19,7 @@ Just startup Synergy and run the bookmarklet.
 
 ## What will work
 
+* Some screens for PSA users (Limited rights users)
 * submitting hours (untested)
 * saving hours
 * previous button
@@ -32,6 +33,7 @@ Just startup Synergy and run the bookmarklet.
 
 ## What doesn't work (yet)
 
+* Screens for Full Suite users
 * test submitting hours
 * enable keyboard shortcut: S (save hours)
 * anything else...
