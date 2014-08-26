@@ -1,0 +1,38 @@
+b {
+    font-weight: bold;
+}
+.bookmarklet-wrapper {
+    display: inline-block;
+}
+.bookmarklet-wrapper span {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+.bookmarklet {
+    background: #a90329;
+    background: -moz-linear-gradient(top,  #a90329 0%, #8f0222 44%, #6d0019 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019));
+    background: -webkit-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%);
+    background: -o-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%);
+    background: -ms-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%);
+    background: linear-gradient(to bottom,  #a90329 0%,#8f0222 44%,#6d0019 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 );
+    border: 1px solid #a90329;
+    border-radius: 0.2em;
+    color: #fff;
+    display: inline-block;
+    font-size: 200%;
+    font-weight: bold;
+    padding: 0.2em;
+}
+.bookmarklet:hover {
+    background: #c60431;
+    background: -moz-linear-gradient(top, #c60431 0%, #b0022b 44%, #920022 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c60431), color-stop(44%,#b0022b), color-stop(100%,#920022));
+    background: -webkit-linear-gradient(top, #c60431 0%,#b0022b 44%,#920022 100%);
+    background: -o-linear-gradient(top, #c60431 0%,#b0022b 44%,#920022 100%);
+    background: -ms-linear-gradient(top, #c60431 0%,#b0022b 44%,#920022 100%);
+    background: linear-gradient(to bottom, #c60431 0%,#b0022b 44%,#920022 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60431', endColorstr='#920022',GradientType=0 );
+}
