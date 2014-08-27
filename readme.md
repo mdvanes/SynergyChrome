@@ -1,9 +1,9 @@
 # Description
 
-The VBS version of the webapplication Synergy only works on IE 8 natively, or IE > 8 after manually modifying the compatibility settings.
+The VBS version of the webapplication Synergy (v3.9, for as far as I know) only works on IE 8 natively, or IE > 8 after manually modifying the compatibility settings.
 This bookmarklet supplies some basic functionality in Chrome (tested) and probably Safari and Firefox too (untested).
 
-Just startup Synergy and run the bookmarklet.
+Just start up Synergy and run the bookmarklet.
 
 
 # Installation
