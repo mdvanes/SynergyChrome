@@ -47,6 +47,22 @@ synergyChrome.bookmarkletInit = function($, subframe) {
                 var startDateNext = $('#StartDateNext', fr).val();
                 $('#StartDate', fr).val(startDateNext);
             });
+
+            // Restyle buttons
+            $('#Baco > .BtnBar > button', fr)
+                .css({
+                    'border': 'none',
+                    'border-radius': '2px',
+                    'cursor': 'pointer',
+                    'padding': '10px'
+                });
+            $('#btnStartDatePrev, #btnStartDateNext', fr)
+                .css({
+                    'border': 'none',
+                    'border-radius': '2px',
+                    'cursor': 'pointer',
+                    'padding': '5px'
+                });
         }
 
         function bindSearch() {
@@ -79,9 +95,13 @@ synergyChrome.bookmarkletInit = function($, subframe) {
 
         function restyleMainTable() {
             $('.Grid', fr)
-                .css('margin-right', '7px')
+                .css({
+                    'border-collapse': 'collapse',
+                    'margin-right': '7px'
+                })
                 .removeAttr('width');
             $('.Grid', fr).find('colgroup > col').removeAttr('width');
+            $('.Grid', fr).find('td > input.ReadOnly').closest('td').css('background-color', '#e7e7e7');
         }
 
         function restyleHeader() {
@@ -92,7 +112,8 @@ synergyChrome.bookmarkletInit = function($, subframe) {
                     .css({
                         'background': '#ba0064',
                         'color': '#fff',
-                        'font-size': '17px'
+                        'font-size': '17px',
+                        'height': '100%'
                     })
                     .append('<b>SynergyChrome v [[VERSION]]</b>');
                 frameset.rows='25,*';
