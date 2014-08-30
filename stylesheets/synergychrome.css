@@ -36,3 +36,11 @@ b {
     background: linear-gradient(to bottom, #c60431 0%,#b0022b 44%,#920022 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60431', endColorstr='#920022',GradientType=0 );
 }
+
+#synergyUrl {
+    width: 370px;
+}
+
+#generatedBookmarkletWrapper {
+    display: none;
+}
