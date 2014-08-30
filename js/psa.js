@@ -3,7 +3,7 @@
 var synergyChrome = synergyChrome || (synergyChrome = {});
 
 // Modify PSA screens
-synergyChrome.bookmarkletInit = function($, subframe) {
+synergyChrome.bookmarkletInit = function($, subframe, topframe) {
     'use strict';
     (function($) {
         var fr = null;
@@ -108,7 +108,7 @@ synergyChrome.bookmarkletInit = function($, subframe) {
             var frameset = parent.document.getElementsByTagName('frameset')[0];
             // Prevent running multiple times
             if(frameset.rows !== '25,*') {
-                $('.Sidebar', parent.em_header.document)
+                $('.Sidebar', topframe.document)
                     .css({
                         'background': '#ba0064',
                         'color': '#fff',

@@ -8,6 +8,8 @@ var synergyChrome = synergyChrome || (synergyChrome = {});
 
     /* public funtions */
 
+    synergyChrome.URL = null;
+
     synergyChrome.info = function() {
         banner();
         if(typeof window.console !== 'undefined') {
@@ -36,16 +38,15 @@ var synergyChrome = synergyChrome || (synergyChrome = {});
 
     function isSynergy() {
         // Test for 3 frame names
-        if( typeof topframe === 'object' &&
+        return typeof topframe === 'object' &&
             typeof subframe === 'object' &&
-            typeof parent.em_list === 'object') {
-           return true;
-        } else {
-            var message = 'Initialization failed: Synergy needs to be logged in and the active tab.';
-            console.warn(message);
-            alert(message);
-            return false;
-        }
+            typeof parent.em_list === 'object';
+    }
+
+    function warnNotSynergy() {
+        var message = 'Initialization failed: Synergy needs to be logged in and the active tab.';
+        console.warn(message);
+        alert(message);
     }
 
     function addJQuery() {
@@ -95,7 +96,7 @@ var synergyChrome = synergyChrome || (synergyChrome = {});
                     var $ = topframe.jQuery;
                     markBookmarkletLoaded();
                     // Initialize the bookmarklet
-                    synergyChrome.bookmarkletInit($, subframe);
+                    synergyChrome.bookmarkletInit($, subframe, topframe);
                 }
             } else {
                 console.info('SynergyChrome not loaded, try fixing by adding jQuery before next poll');
@@ -107,10 +108,58 @@ var synergyChrome = synergyChrome || (synergyChrome = {});
 
     function init() {
         banner();
+
+        // if(synergyChrome.URL === null) {
+        // If no prefilled url, try to load on the current page
         if(isSynergy()) {
             addJQuery();
             synergyChrome.loaderInterval = startLoadingInterval();
+        } else {
+            warnNotSynergy();
         }
+        // } else {
+        //     console.info('SynergyChrome: Using preloaded synergy URL.');
+        //     // Check if current url matches synergyUrl
+        //     if(top.location.href !== synergyChrome.URL) {
+        //         // Redirect to synergy
+        //         // TODO when using this, all following javascripts will be cancelled:
+        //         //top.location.href = synergyChrome.URL;
+        //         // $.ajax(synergyChrome.URL, function(data) {
+        //         //     console.log(data);
+        //         // });
+        //         //var request = 
+        //         $.ajax(synergyChrome.URL)
+        //             .done(function(data) {
+        //                 alert( '"success "' + data );
+        //             })
+        //             .fail(function(jqXHR, textStatus) {
+        //                 console.error( '"error"' + textStatus, jqXHR );
+        //             })
+        //             .always(function() {
+        //                 alert( '"complete"' );
+        //             });
+        //         // TODO add jQuery here
+        //         // var height = document.getElementsByTagName('html')[0].clientHeight;
+        //         // document.getElementsByTagName('body')[0].innerHTML = '<iframe src="' +
+        //         //     synergyChrome.URL +
+        //         //     '" width="100%" height="' +
+        //         //     height +
+        //         //     '"></iframe>';
+        //         // TODO add CSS to remove scrollbars and iframe border
+        //         // TODO execute scripts on the iframe instead of the main window
+        //     }
+            
+        //     // if not isSynergy (not logged in) loop until logged in
+        //     if(!isSynergy()) {
+        //         var loggedInInterval = setInterval(function() {
+        //             if(isSynergy()) {
+        //                 window.clearInterval(loggedInInterval);
+        //                 addJQuery();
+        //                 synergyChrome.loaderInterval = startLoadingInterval();
+        //             }
+        //         }, 100);
+        //     }
+        // }
     }
 
     init();
