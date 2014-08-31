@@ -109,57 +109,35 @@ var synergyChrome = synergyChrome || (synergyChrome = {});
     function init() {
         banner();
 
-        // if(synergyChrome.URL === null) {
-        // If no prefilled url, try to load on the current page
-        if(isSynergy()) {
-            addJQuery();
-            synergyChrome.loaderInterval = startLoadingInterval();
+        if(synergyChrome.URL === null) {
+            // If no prefilled url, try to load on the current page
+            if(isSynergy()) {
+                addJQuery();
+                synergyChrome.loaderInterval = startLoadingInterval();
+            } else {
+                warnNotSynergy();
+            }
         } else {
-            warnNotSynergy();
+            console.info('SynergyChrome: Using preloaded synergy URL.');
+            var currentHref = top.location.protocol + '//' + top.location.host;
+            // Check if current url matches synergyUrl
+            if(currentHref !== synergyChrome.URL) {
+                alert('You will be redirected.\nLog in and run this bookmark again to initialize.');
+                // Redirect to Synergy
+                // When using this, all following javascripts will be cancelled, so not possible 
+                // to initialize automatically afterwards
+                top.location.href = synergyChrome.URL;
+            } else {
+                if(isSynergy()) {
+                    // URL is synergyURL and isSynergy (you're logged in) -> initialize
+                    addJQuery();
+                    synergyChrome.loaderInterval = startLoadingInterval();
+                } else {
+                    // URL is synergyURL, but not isSynergy -> you're not logged in
+                    alert('You are not logged in.\nLog in and run this bookmark again to initialize.');
+                }
+            }
         }
-        // } else {
-        //     console.info('SynergyChrome: Using preloaded synergy URL.');
-        //     // Check if current url matches synergyUrl
-        //     if(top.location.href !== synergyChrome.URL) {
-        //         // Redirect to synergy
-        //         // TODO when using this, all following javascripts will be cancelled:
-        //         //top.location.href = synergyChrome.URL;
-        //         // $.ajax(synergyChrome.URL, function(data) {
-        //         //     console.log(data);
-        //         // });
-        //         //var request = 
-        //         $.ajax(synergyChrome.URL)
-        //             .done(function(data) {
-        //                 alert( '"success "' + data );
-        //             })
-        //             .fail(function(jqXHR, textStatus) {
-        //                 console.error( '"error"' + textStatus, jqXHR );
-        //             })
-        //             .always(function() {
-        //                 alert( '"complete"' );
-        //             });
-        //         // TODO add jQuery here
-        //         // var height = document.getElementsByTagName('html')[0].clientHeight;
-        //         // document.getElementsByTagName('body')[0].innerHTML = '<iframe src="' +
-        //         //     synergyChrome.URL +
-        //         //     '" width="100%" height="' +
-        //         //     height +
-        //         //     '"></iframe>';
-        //         // TODO add CSS to remove scrollbars and iframe border
-        //         // TODO execute scripts on the iframe instead of the main window
-        //     }
-            
-        //     // if not isSynergy (not logged in) loop until logged in
-        //     if(!isSynergy()) {
-        //         var loggedInInterval = setInterval(function() {
-        //             if(isSynergy()) {
-        //                 window.clearInterval(loggedInInterval);
-        //                 addJQuery();
-        //                 synergyChrome.loaderInterval = startLoadingInterval();
-        //             }
-        //         }, 100);
-        //     }
-        // }
     }
 
     init();

@@ -33,9 +33,6 @@ Just start up Synergy and run the bookmarklet.
 
 ## What doesn't work (yet)
 
-* FIX GA!!!!!!!!!!!
-
-* When clicking the bookmark outside Synergy, redirect to Synergy and then load the bookmarklet
 * Delete and save buttons at the end of the hour rows
 * Screens for Full Suite users
 * enable keyboard shortcut: S (save hours)
