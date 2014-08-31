@@ -26,6 +26,8 @@ synergyChrome.bookmarkletInit = function($, subframe, topframe) {
                 // Add button1=
                 $('#ProjectNumberFin', fr).before('<input name="button1"/>');
             });
+            // TODO same for the button at the end of the line
+            // TODO also for delete and edit button at the end of the line
 
             // Submit button
             $('#btnInDien', fr).click(function() {
