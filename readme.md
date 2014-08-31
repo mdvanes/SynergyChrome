@@ -34,7 +34,7 @@ Just start up Synergy and run the bookmarklet.
 ## What doesn't work (yet)
 
 * Delete and save buttons at the end of the hour rows
+* Enable keyboard shortcut: S (save hours)
 * Screens for Full Suite users
-* enable keyboard shortcut: S (save hours)
-* anything else...
+* Anything else...
 
