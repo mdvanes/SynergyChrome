@@ -20,21 +20,22 @@ Just start up Synergy and run the bookmarklet.
 ## What will work
 
 * Some screens for PSA users (Limited rights users)
-* submitting hours
-* saving hours
-* previous button
-* next button
-* search for hour code (the infamous F2)
-* in search window: entire row clickable
-* table on main window narrower
-* provide debug info by typing in console: synergyChrome.info
-* when focussing on "Uur/Artikel", prefill PRUUR
-* automatic loading of this script after a load
+* Submitting hours
+* Saving hours
+* Previous button
+* Next button
+* Delete, edit and save buttons at the end of the hour rows
+* Search for hour code (the infamous F2)
+* In search window: entire row clickable
+* Table on main window narrower
+* Provide debug info by typing in console: synergyChrome.info
+* When focussing on "Uur/Artikel", prefill PRUUR
+* Automatic loading of this script after a load
 
 ## What doesn't work (yet)
 
-* Delete and save buttons at the end of the hour rows
 * Enable keyboard shortcut: S (save hours)
+* Add vacation
 * Screens for Full Suite users
 * Anything else...
 
