@@ -26,8 +26,71 @@ synergyChrome.bookmarkletInit = function($, subframe, topframe) {
                 // Add button1=
                 $('#ProjectNumberFin', fr).before('<input name="button1"/>');
             });
-            // TODO same for the button at the end of the line
-            // TODO also for delete and edit button at the end of the line
+
+            // Save button at the end of the row
+            $('#ProjectNumberHour', fr).closest('tr').find('#button1').each(function() {
+                var $this = $(this);
+                $this
+                    .css('cursor', 'pointer')
+                    .removeAttr('onclick')
+                    .removeAttr('language')
+                    .click(function() {
+                        // Set form action code to 1
+                        setActionCode('1');
+
+                        // Add button1=
+                        $('#ProjectNumberFin', fr).before('<input name="button1"/>');
+                    });
+            });
+
+            // by name, because ids are not unique in the HTML
+            $('input[name=ProjectNumberHourExists]', fr).closest('tr').each(function(index) {
+                var rowIndex = index + 1;
+                var project = $('#ProjectNumberHourExists', this).val();
+                var item = $('#ItemCodeHourExists', this).val();
+
+                // Delete buttons at the end of the row
+                var $deleteButton = $('.RowNumber button:first-child', this);
+                $deleteButton.each(function() {
+                    $(this)
+                        .css('cursor', 'pointer')
+                        .removeAttr('onclick')
+                        .removeAttr('language')
+                        .click(function(e) {
+                            var canDelete = confirm('Do you want to delete row ' + rowIndex + '?');
+                            if(canDelete) {
+                                // Set form action code to 5
+                                setActionCode('5');
+
+                                // Set HourDelete to the index of this row
+                                $('#HourDelete', fr).val(rowIndex);
+                            } else {
+                                e.preventDefault();
+                                return false;
+                            }
+                        });
+                });
+
+                // Edit buttons at the end of the row
+                var $editButton = $('.RowNumber button:last-of-type', this);
+                $editButton.each(function() {
+                    $(this)
+                        .css('cursor', 'pointer')
+                        .removeAttr('onclick')
+                        .removeAttr('language')
+                        .click(function() {
+                            var resId = $('#gResID', fr).val();
+                            var startDate = $('#StartDate', fr).val();
+                            var newAction = 'CSPSAMHourDesc.asp?Action=1&resid=' + resId +
+                                '&project=' + project +
+                                '&item=' + item +
+                                '&status=0' +
+                                '&date=' + startDate +
+                                '&reqtype=800';
+                            $('form#Baco', fr).attr('action', newAction);
+                        });
+                });
+            });
 
             // Submit button
             $('#btnInDien', fr).click(function() {
