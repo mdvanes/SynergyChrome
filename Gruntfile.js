@@ -27,17 +27,21 @@ module.exports = function(grunt) {
                 },
                 files: {
                     '_tmp/synergyChrome-dev.js': [
+                        'js/leave.js',
                         'js/psa.js',
-                        'js/prepare.js']
+                        'js/prepare.js'
+                    ]
                     // Do not export variables
                 }
             },
             build: {
                 files: {
                     '_tmp/synergyChrome-minified.js': [
+                        'js/leave.js',
                         'js/psa.js',
                         'js/prepare.js',
-                        'js/exports.js']
+                        'js/exports.js'
+                    ]
                 }
             }
         },

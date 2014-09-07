@@ -24,7 +24,7 @@ synergyChrome.bookmarkletInit = function($, subframe, topframe) {
                 setActionCode('1');
 
                 // Add button1=
-                $('#ProjectNumberFin', fr).before('<input name="button1"/>');
+                $('#ProjectNumberFin', fr).before('<input name="button1"/>'); // TODO can this be removed?
             });
 
             // Save button at the end of the row
@@ -254,6 +254,8 @@ synergyChrome.bookmarkletInit = function($, subframe, topframe) {
             removeValidateNumber();
             restyleMainTable();
             restyleHeader();
+
+            synergyChrome.requestLeave($, subframe);
 
             setTimeout(function() {
                 $('#wait', fr).hide();
