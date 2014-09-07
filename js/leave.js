@@ -1,4 +1,4 @@
-// request leave/verlof aanvragen
+// Request leave/verlof aanvragen
 
 var synergyChrome = synergyChrome || (synergyChrome = {});
 
@@ -27,9 +27,6 @@ synergyChrome.requestLeave = function($, subframe) {
                 if(reqType.length > 0) {
                     type = reqType[0];
                 }
-                //alert(type);
-                // set window.location to Eprequest.asp
-                // /Synergy/docs/Eprequest.asp?RepName=EPrequest&Type=10&EmployeeID=164&StartDate=01-01-2014%2009:00&EndDate=31-12-2014%2017:00
                 var url = 'Eprequest.asp?RepName=EPrequest&Type=' + type +
                     '&EmployeeID=' + id +
                     '&StartDate=' + startDate + '%2009:00' +
@@ -46,6 +43,11 @@ synergyChrome.requestLeave = function($, subframe) {
                 alert('Not yet implemented: type the date in the textfield as a workaround');
                 return false;
             });
+        $('input[name=StartDate], input[name=EndDate]', fr)
+            .removeAttr('onkeydown')
+            .removeAttr('onkeypress');
+        $('.Field > button.Calculate', fr).removeAttr('onclick');
+        // TODO expected problem: what happens when entering a description and clicking the calculator? Is it then submitted? That should not happen. In that case, set to NYI
     };
 
     // var initSaveButton = function() {
@@ -62,7 +64,6 @@ synergyChrome.requestLeave = function($, subframe) {
     // };
 
     var initButtons = function() {
-        console.info('but0', $('#btnSave', fr));
         var $saveBtn = $('#Baco > #btnSave', fr);
         var $editBtn = $('#Baco > button[accesskey=E]', fr);
         var $conceptBtn = $('#Baco > button[accesskey=1]', fr);
