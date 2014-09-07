@@ -39,3 +39,6 @@ Just start up Synergy and run the bookmarklet.
 * Screens for Full Suite users
 * Anything else...
 
+
+* add vacation: datepickers
+* log worked hours: datepicker
