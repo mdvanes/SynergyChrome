@@ -1,4 +1,4 @@
-// Request leave/verlof aanvragen
+// Request vacation days
 
 var synergyChrome = synergyChrome || (synergyChrome = {});
 
@@ -46,22 +46,18 @@ synergyChrome.requestLeave = function($, subframe) {
         $('input[name=StartDate], input[name=EndDate]', fr)
             .removeAttr('onkeydown')
             .removeAttr('onkeypress');
-        $('.Field > button.Calculate', fr).removeAttr('onclick');
-        // TODO expected problem: what happens when entering a description and clicking the calculator? Is it then submitted? That should not happen. In that case, set to NYI
     };
 
-    // var initSaveButton = function() {
-    //     $('#btnSave', fr)
-    //         .removeAttr('onmousedown')
-    //         .removeAttr('onmouseout')
-    //         .removeAttr('onmouseover')
-    //         .css({
-    //             'border': 'none',
-    //             'border-radius': '2px',
-    //             'cursor': 'pointer',
-    //             'padding': '5px'
-    //         });
-    // };
+    // TODO implement calculate button
+    var initCalculator = function() {
+        // TODO confirmed problem: what happens when entering a description and clicking the calculator? Is it then submitted? That should not happen. In that case, set to NYI
+        $('.Field > button.Calculate', fr)
+            .removeAttr('onclick')
+            .click(function() {
+                alert('Not yet implemented');
+                return false;
+            });
+    };
 
     var initButtons = function() {
         var $saveBtn = $('#Baco > #btnSave', fr);
@@ -73,7 +69,8 @@ synergyChrome.requestLeave = function($, subframe) {
                 .removeAttr('onmousedown')
                 .removeAttr('onmouseout')
                 .removeAttr('onmouseover')
-                .attr('disabled', 'disabled') // TODO remove
+                .removeAttr('onclick')
+                .removeAttr('language')
                 .css({
                     'border': 'none',
                     'border-radius': '2px',
@@ -81,13 +78,18 @@ synergyChrome.requestLeave = function($, subframe) {
                     'padding': '5px'
                 });
         });
-        // $([$editBtn, $conceptBtn]).each(function() {
-        //     $(this).attr('disabled', 'disabled');
-        // });
+        $([$editBtn, $conceptBtn]).each(function() {
+            $(this).attr('disabled', 'disabled');
+        });
+        // TODO test Save button
+        $saveBtn.click(function() {
+            $('form#Baco', fr).attr('action', 'Eprequest.asp?Action=2');
+        });
     };
 
-    // TODO implement and test save button
-    // TODO implement calculate button
+    var initDescription = function() {
+        $('#Description', fr).removeAttr('onchange');
+    };
 
     function init() {
         fr = subframe.document;
@@ -97,7 +99,9 @@ synergyChrome.requestLeave = function($, subframe) {
         } else if(subframe.location.pathname === '/Synergy/docs/Eprequest.asp') {
             // Request Leave page
             initDatepickers();
+            initCalculator();
             initButtons();
+            initDescription();
         }
     }
 
