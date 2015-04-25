@@ -12,8 +12,8 @@ module.exports = function(grunt) {
         watch: {
             script: {
                 files: ['js/*.js'],
-                tasks: ['build'],
-            },
+                tasks: ['build']
+            }
         },
 
         uglify: {
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 
         jshint: {
             options: {
-                jshintrc: '.jshintrc',
+                jshintrc: '.jshintrc'
             },
             all: [
                 'js/*.js'
@@ -81,35 +81,52 @@ module.exports = function(grunt) {
                 files: [
                     {expand: true, flatten: true, src: ['_tmp/synergyChrome-minified.js'], dest: '_tmp'}
                 ]
-            },
-        },
-
-        execute: {
-            urlencode: {
-                options: {
-                    args: ['_tmp/synergyChrome-minified.js', 'synergyChromeBookmarklet.min.js']
-                },
-                src: 'util/urlencode.js'
             }
         },
 
-        stamp: {
-            options: {
-                banner: 'javascript:(function(){',
-                footer: '})();\n' +
-                    '/*! <%= pkg.name %> by <%= pkg.author %> - v<%= pkg.version %> - ' +
-                    '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
-            },
-            js: {
+        bookmarklet_wrapper: {
+            dist: {
+                options: {
+                    banner: '\n' +
+                        '/*! <%= pkg.name %> by <%= pkg.author %> - v<%= pkg.version %> - ' +
+                        '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
+                },
                 files: {
-                    src: 'synergyChromeBookmarklet.min.js'
+                    'synergyChromeBookmarklet.min.js': ['_tmp/synergyChrome-minified.js']
                 }
             }
         }
+
+        // TODO
+        //"grunt-execute": "^0.2.2",
+        //"grunt-stamp": "^0.1.0",
+        //execute: {
+        //    urlencode: {
+        //        options: {
+        //            args: ['_tmp/synergyChrome-minified.js', 'synergyChromeBookmarklet.min.js']
+        //        },
+        //        src: 'util/urlencode.js'
+        //    }
+        //},
+        //
+        //stamp: {
+        //    options: {
+        //        banner: 'javascript:(function(){',
+        //        footer: '})();\n' +
+        //            '/*! <%= pkg.name %> by <%= pkg.author %> - v<%= pkg.version %> - ' +
+        //            '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
+        //    },
+        //    js: {
+        //        files: {
+        //            src: 'synergyChromeBookmarklet.min.js'
+        //        }
+        //    }
+        //}
     });
 
     // Tasks
     grunt.registerTask('default', ['watch']);
 
-    grunt.registerTask('build', ['jshint', 'uglify:dev', 'uglify:build', 'replace:build', 'execute:urlencode', 'stamp']);
+    // TODO grunt.registerTask('build', ['jshint', 'uglify:dev', 'uglify:build', 'replace:build', 'execute:urlencode', 'stamp']);
+    grunt.registerTask('build', ['jshint', 'uglify:dev', 'uglify:build', 'replace:build', 'bookmarklet_wrapper:dist']);
 };
