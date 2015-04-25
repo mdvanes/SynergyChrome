@@ -101,7 +101,7 @@ module.exports = function(grunt) {
                     '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
             },
             js: {
-                files: { 
+                files: {
                     src: 'synergyChromeBookmarklet.min.js'
                 }
             }
